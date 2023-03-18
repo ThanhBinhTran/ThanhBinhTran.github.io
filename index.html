@@ -11,69 +11,6 @@
   <body>
     <h1>Welcome to my persional Website!</h1>
     <img src="robot.png" alt="A picture of a robot">
-    <input type="text" id="searchField" placeholder="Search your ID...">
-    <button onclick="search()">Search</button>
-
-    <table id="resultsTable">
-      <!-- Table data will be inserted here -->
-    </table>
-
-    <script>
-      function search() {
-        // Get the search value
-        var searchValue = document.getElementById("searchField").value;
-
-        // Read the CSV file
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
-            // Parse the CSV data
-            var rows = xhr.responseText.split("\n");
-            var data = [];
-            for (var i = 0; i < rows.length; i++) {
-              data.push(rows[i].split(","));
-            }
-
-            // Search for matching rows
-            var results = [];
-            for (var i = 0; i < data.length; i++) {
-              for (var j = 0; j < data[i].length; j++) {
-                if (data[i][j].includes(searchValue)) {
-                  results.push(data[i]);
-                  break;
-                }
-              }
-            }
-
-            // Display the results in a table
-            var tableHtml = "";
-            for (var i = 0; i < results.length; i++) {
-              tableHtml += "<tr>";
-              for (var j = 0; j < results[i].length; j++) {
-                tableHtml += "<td>" + results[i][j] + "</td>";
-              }
-              tableHtml += "</tr>";
-            }
-            document.getElementById("resultsTable").innerHTML = tableHtml;
-          }
-        }
-        xhr.open("GET", "data.csv", true);
-        xhr.send();
-      }
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CSV Search</title>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
     <input type="text" id="searchField" placeholder="Search...">
     <button onclick="search()">Search</button>
 
