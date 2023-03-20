@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Thanh-Binh Website</title>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)]</h3>
-    <div>
-      <h4>Input student ID code</h4>
-      <input type="text" id="searchField" placeholder="Search...">
-      <button onclick="search()">Search</button>
-    </div>
-    
 
-    <table id="midterm_result_table">
-      <!-- Table data will be inserted here -->
-      <thead>
-        <tr>
-            <th>MSSV</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Midterm (20%)</th>
-            <th>Lab (10%)</th>
-            <th>Assignment (20 +10)%</th>
-            <th>Final</th>
-            <th>Remarks</th>
-        </tr>
+<head>
+  <title>Thanh-Binh Website</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)]</h3>
+  <div>
+    <h4>Input student ID code</h4>
+    <input type="text" id="searchField" placeholder="Search...">
+    <button onclick="search()">Search</button>
+  </div>
+
+
+  <table id="midterm_result_table">
+    <!-- Table data will be inserted here -->
+    <thead>
+      <tr>
+        <th>MSSV</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Midterm (20%)</th>
+        <th>Lab (10%)</th>
+        <th>Assignment (20 +10)%</th>
+        <th>Final</th>
+        <th>Remarks</th>
+      </tr>
     </thead>
-    </table>
+  </table>
 
-    <script>
-      function search() {
-        // Get the search value
-        var searchValue = document.getElementById("searchField").value;
+  <script>
+    function search() {
+      // Get the search value
+      var searchValue = document.getElementById("searchField").value;
 
-        // Read the CSV file
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
-            // Parse the CSV data
-            var rows = xhr.responseText.split("\n");
-            var data = [];
-            for (var i = 0; i < rows.length; i++) {
-              data.push(rows[i].split(","));
-            }
-
-            // Search for matching rows
-            var results = [];
-            for (var i = 0; i < data.length; i++) {
-              for (var j = 0; j < data[i].length; j++) {
-                if (data[i][j].includes(searchValue)) {
-                  results.push(data[i]);
-                  break;
-                }
-              }
-            }
-
-            // Display the results in a table
-            var tableHtml = "";
-            for (var i = 0; i < results.length; i++) {
-              tableHtml += "<tr>";
-              for (var j = 0; j < results[i].length; j++) {
-                tableHtml += "<td>" + results[i][j] + "</td>";
-              }
-              tableHtml += "</tr>";
-            }
-            document.getElementById("midterm_result_table").innerHTML = tableHtml;
+      // Read the CSV file
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          // Parse the CSV data
+          var rows = xhr.responseText.split("\n");
+          var data = [];
+          for (var i = 0; i < rows.length; i++) {
+            data.push(rows[i].split(","));
           }
+
+          // Search for matching rows
+          var results = [];
+          for (var i = 0; i < data.length; i++) {
+            for (var j = 0; j < data[i].length; j++) {
+              if (data[i][j].includes(searchValue)) {
+                results.push(data[i]);
+                break;
+              }
+            }
+          }
+
+          // Display the results in a table
+          var tableHtml = generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);;
+          for (var i = 0; i < results.length; i++) {
+            tableHtml += "<tr>";
+            for (var j = 0; j < results[i].length; j++) {
+              tableHtml += "<td>" + results[i][j] + "</td>";
+            }
+            tableHtml += "</tr>";
+          }
+          document.getElementById("midterm_result_table").innerHTML = tableHtml;
         }
-        xhr.open("GET", "midterm.csv", true);
-        xhr.send();
       }
-    </script>
-  </body>
+      xhr.open("GET", "midterm.csv", true);
+      xhr.send();
+    }
+    function generateTableHeaders(headers) {
+      var table = document.getElementById("midterm_result_table");
+      var thead = table.createTHead();
+      var row = thead.insertRow();
+      for (var i = 0; i < headers.length; i++) {
+        var th = document.createElement("th");
+        th.innerHTML = headers[i];
+        row.appendChild(th);
+      }
+    }
+  </script>
+</body>
+
 </html>
