@@ -6,59 +6,44 @@
   </head>
   <body>
     <h1>Computer Architecture [Score]</h1>
-
-    <div class="search-container">
-      <text> Input your student ID: </text>
-      <input type="text" id="searchField" placeholder="Search...">
-      <button onclick="search()"><i class="search-icon">🔍</i></button>
+    <div>
+      <h2> Input your student ID: </h2>
+      <input type="text" id="search-input" placeholder="Search...">
+      <button onclick="searchCSV()">Search</button>
     </div>
+
     
-    <div class="table">
-        <table id="resultsTable">
-          <!-- Table data will be inserted here -->
-        </table>
-    </div>
+    <div id="table-container"></div>
     <script>
-      function search() {
+      function searchCSV() {
         // Get the search value
-        var searchValue = document.getElementById("searchField").value;
-
+        var searchValue = document.getElementById('search-input').value;
+        
         // Read the CSV file
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
+        fetch('data.csv')
+          .then(response => response.text())
+          .then(data => {
             // Parse the CSV data
-            var rows = xhr.responseText.split("\n");
-            var data = [];
-            for (var i = 0; i < rows.length; i++) {
-              data.push(rows[i].split(","));
-            }
-
-            // Search for matching rows
-            var results = [];
-            for (var i = 0; i < data.length; i++) {
-              for (var j = 0; j < data[i].length; j++) {
-                if (data[i][j].includes(searchValue)) {
-                  results.push(data[i]);
-                  break;
-                }
-              }
-            }
-
-            // Display the results in a table
-            var tableHtml = "";
-            for (var i = 0; i < results.length; i++) {
-              tableHtml += "<tr>";
-              for (var j = 0; j < results[i].length; j++) {
-                tableHtml += "<td>" + results[i][j] + "</td>";
-              }
-              tableHtml += "</tr>";
-            }
-            document.getElementById("resultsTable").innerHTML = tableHtml;
-          }
-        }
-        xhr.open("GET", "midterm.csv", true);
-        xhr.send();
+            var rows = data.split('\n');
+            var tableData = rows.map(row => row.split(','));
+            
+            // Search the first column for the search value
+            var result = tableData.filter(row => row[0] === searchValue);
+            
+            // Create a table to display the result
+            var table = '<table>';
+            result.forEach(row => {
+              table += '<tr>';
+              row.forEach(cell => {
+                table += `<td>${cell}</td>`;
+              });
+              table += '</tr>';
+            });
+            table += '</table>';
+            
+            // Display the result in the table container
+            document.getElementById('table-container').innerHTML = table;
+          });
       }
     </script>
   </body>
