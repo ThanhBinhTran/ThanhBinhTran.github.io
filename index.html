@@ -1,49 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thanh-Binh's Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Thanh-Binh Website</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+    <style>
+      .search-container {
+        position: relative;
+      }
+
+      .search-container input[type="text"] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .search-container button {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        height: calc(100% - 16px);
+        width: 40px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor:pointer
+      }
+    </style>
   </head>
   <body>
-    <h1>Computer Architecture [Score]</h1>
-    <div>
-      <h2> Input your student ID: </h2>
-      <input type="text" id="search-input" placeholder="Search...">
-      <button onclick="searchCSV()">Search</button>
+    <h1>Welcome to my persional Website!</h1>
+    <img src="robot.png" alt="A picture of a robot">
+    <div class="search-container">
+      <input type="text" id="searchField" placeholder="Search...">
+      <button onclick="search()">🔍</button>
     </div>
-
     
-    <div id="table-container"></div>
+    <table id="resultsTable">
+      <!-- Table data will be inserted here -->
+    </table>
+
     <script>
-      function searchCSV() {
+      function search() {
         // Get the search value
-        var searchValue = document.getElementById('search-input').value;
-        
+        var searchValue = document.getElementById("searchField").value;
+
         // Read the CSV file
-        fetch('data.csv')
-          .then(response => response.text())
-          .then(data => {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == XMLHttpRequest.DONE) {
             // Parse the CSV data
-            var rows = data.split('\n');
-            var tableData = rows.map(row => row.split(','));
-            
-            // Search the first column for the search value
-            var result = tableData.filter(row => row[0] === searchValue);
-            
-            // Create a table to display the result
-            var table = '<table>';
-            result.forEach(row => {
-              table += '<tr>';
-              row.forEach(cell => {
-                table += `<td>${cell}</td>`;
-              });
-              table += '</tr>';
-            });
-            table += '</table>';
-            
-            // Display the result in the table container
-            document.getElementById('table-container').innerHTML = table;
-          });
+            var rows = xhr.responseText.split("\n");
+            var data = [];
+            for (var i = 0; i < rows.length; i++) {
+              data.push(rows[i].split(","));
+            }
+
+            // Search for matching rows
+            var results = [];
+            for (var i = 0; i < data.length; i++) {
+              for (var j = 0; j < data[i].length; j++) {
+                if (data[i][j].includes(searchValue)) {
+                  results.push(data[i]);
+                  break;
+                }
+              }
+            }
+
+            // Display the results in a table
+            var tableHtml = "";
+            for (var i = 0; i < results.length; i++) {
+              tableHtml += "<tr>";
+              for (var j = 0; j < results[i].length; j++) {
+                tableHtml += "<td>" + results[i][j] + "</td>";
+              }
+              tableHtml += "</tr>";
+            }
+            document.getElementById("resultsTable").innerHTML = tableHtml;
+          }
+        }
+        xhr.open("GET", "data.csv", true);
+        xhr.send();
       }
     </script>
   </body>
