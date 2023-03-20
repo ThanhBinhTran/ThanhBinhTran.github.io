@@ -9,13 +9,28 @@
     </style>
   </head>
   <body>
-    <h1>Welcome to my persional Website!</h1>
-    <img src="robot.png" alt="A picture of a robot">
-    <input type="text" id="searchField" placeholder="Search...">
-    <button onclick="search()">Search</button>
+    <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)]</h3>
+    <div>
+      <h4>Input student ID code</h4>
+      <input type="text" id="searchField" placeholder="Search...">
+      <button onclick="search()">Search</button>
+    </div>
+    
 
-    <table id="resultsTable">
+    <table id="midterm_result_table">
       <!-- Table data will be inserted here -->
+      <thead>
+        <tr>
+            <th>MSSV</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Midterm (20%)</th>
+            <th>Lab (10%)</th>
+            <th>Assignment (20 +10)%</th>
+            <th>Final</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
     </table>
 
     <script>
@@ -54,7 +69,7 @@
               }
               tableHtml += "</tr>";
             }
-            document.getElementById("resultsTable").innerHTML = tableHtml;
+            document.getElementById("midterm_result_table").innerHTML = tableHtml;
           }
         }
         xhr.open("GET", "midterm.csv", true);
