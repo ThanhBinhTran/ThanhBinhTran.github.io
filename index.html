@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@papaparse/papaparse@5"></script>
 </head>
 <body>
-
+<h4> version 359</h4>
 <input type="text" id="searchInput" placeholder="Search...">
 <button id="searchButton">Search</button>
 
@@ -47,7 +47,7 @@
         var searchValue = $("#searchInput").val();
         $.ajax({
             type: "GET",
-            url: "data.csv",
+            url: "midterm.csv",
             success: function(data) {
                 CSVToHTMLTable(data);
                 // add code here to filter the table based on the searchValue
