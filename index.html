@@ -65,7 +65,7 @@
           }
 
           // Display the results in a table
-          var tableHtml = generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);;
+          var tableHtml = "";
           for (var i = 0; i < results.length; i++) {
             tableHtml += "<tr>";
             for (var j = 0; j < results[i].length; j++) {
@@ -73,14 +73,16 @@
             }
             tableHtml += "</tr>";
           }
+          table_header = generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);
           document.getElementById("midterm_result_table").innerHTML = tableHtml;
+          document.getElementById("midterm_result_table").headers = table_header
         }
       }
       xhr.open("GET", "midterm.csv", true);
       xhr.send();
     }
     function generateTableHeaders(headers) {
-      var table = document.getElementById("midterm_result_table");
+      var table_header = document.getElementById("midterm_result_table");
       var thead = table.createTHead();
       var row = thead.insertRow();
       for (var i = 0; i < headers.length; i++) {
@@ -88,6 +90,7 @@
         th.innerHTML = headers[i];
         row.appendChild(th);
       }
+      return table_header;
     }
   </script>
 </body>
