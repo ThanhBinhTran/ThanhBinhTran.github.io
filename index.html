@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@papaparse/papaparse@5"></script>
-</head>
-<body>
+  <head>
+    <title>Thanh-Binh Website</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my persional Website!</h1>
+    <img src="robot.png" alt="A picture of a robot">
+    <input type="text" id="searchField" placeholder="Search...">
+    <button onclick="search()">Search</button>
 
-<input type="text" id="searchInput" placeholder="Search...">
-<button id="searchButton">Search</button>
+    <table id="resultsTable">
+      <!-- Table data will be inserted here -->
+    </table>
 
-<table id="myTable">
-    <thead></thead>
-    <tbody></tbody>
-</table>
+    <script>
+      function search() {
+        // Get the search value
+        var searchValue = document.getElementById("searchField").value;
 
-<script>
-    function CSVToHTMLTable(data) {
-        var csvData = Papa.parse(data).data;
-        var table = document.getElementById("myTable");
-        for (var i = 0; i < csvData.length; i++) {
-            var row = table.insertRow(-1);
-            for (var j = 0; j < csvData[i].length; j++) {
-                var cell = row.insertCell(-1);
-                cell.innerHTML = csvData[i][j];
+        // Read the CSV file
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == XMLHttpRequest.DONE) {
+            // Parse the CSV data
+            var rows = xhr.responseText.split("\n");
+            var data = [];
+            for (var i = 0; i < rows.length; i++) {
+              data.push(rows[i].split(","));
             }
+
+            // Search for matching rows
+            var results = [];
+            for (var i = 0; i < data.length; i++) {
+              for (var j = 0; j < data[i].length; j++) {
+                if (data[i][j].includes(searchValue)) {
+                  results.push(data[i]);
+                  break;
+                }
+              }
+            }
+
+            // Display the results in a table
+            var tableHtml = "";
+            for (var i = 0; i < results.length; i++) {
+              tableHtml += "<tr>";
+              for (var j = 0; j < results[i].length; j++) {
+                tableHtml += "<td>" + results[i][j] + "</td>";
+              }
+              tableHtml += "</tr>";
+            }
+            document.getElementById("resultsTable").innerHTML = tableHtml;
+          }
         }
-    }
-
-    $("#searchButton").click(function() {
-        var searchValue = $("#searchInput").val();
-        $.ajax({
-            type: "GET",
-            url: "data.csv",
-            success: function(data) {
-                CSVToHTMLTable(data);
-                // add code here to filter the table based on the searchValue
-            }
-        });
-    });
-</script>
-
-</body>
+        xhr.open("GET", "data.csv", true);
+        xhr.send();
+      }
+    </script>
+  </body>
 </html>
