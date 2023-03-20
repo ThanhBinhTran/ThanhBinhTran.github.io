@@ -1,17 +1,16 @@
 <style>
-  body {
-    font-family: Arial, sans-serif;
-  }
-  form {
-    margin-bottom: 20px;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th, td {
-    text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.search-input {
+  padding-left: 30px;
+}
 </style>
