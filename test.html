@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V12</h3>
+  <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V403</h3>
   <div>
     <h4>Input student ID code</h4>
     <input type="text" id="searchField" placeholder="Search...">
@@ -74,22 +74,33 @@
             tableHtml += "</tr>";
           }
           
-          document.getElementById("midterm_result_table").innerHTML = tableHtml;
+          //document.getElementById("midterm_result_table").innerHTML = tableHtml;
           generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);
+          insertRow(results);
         }
       }
       xhr.open("GET", "midterm.csv", true);
       xhr.send();
     }
+
     function generateTableHeaders(headers) {
-      var table = document.getElementById("midterm_result_table");
-      var thead = table.createTHead();
-      var row = thead.insertRow();
-      for (var i = 0; i < headers.length; i++) {
-        var th = document.createElement("th");
-        th.innerHTML = headers[i];
-        row.appendChild(th);
-      }
+        var table = document.getElementById("midterm_result_table");
+        var thead = table.createTHead();
+        var row = thead.insertRow();
+        for (var i = 0; i < headers.length; i++) {
+            var th = document.createElement("th");
+            th.innerHTML = headers[i];
+            row.appendChild(th);
+        }
+    }
+
+    function insertRow(data) {
+        var table = document.getElementById("midterm_result_table");
+        var row = table.insertRow(-1);
+        for (var i = 0; i < data.length; i++) {
+            var cell = row.insertCell(-1);
+            cell.innerHTML = data[i];
+        }
     }
   </script>
 </body>
