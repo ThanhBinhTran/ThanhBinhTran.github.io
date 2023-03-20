@@ -75,7 +75,7 @@
           }
           table_header = generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);
           document.getElementById("midterm_result_table").innerHTML = tableHtml;
-          document.getElementById("midterm_result_table").headers = table_header
+          document.getElementById("midterm_result_table").headers = table_header;
         }
       }
       xhr.open("GET", "midterm.csv", true);
