@@ -1,107 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
 <head>
   <meta charset="utf-8">
-  <title>Thanh-Binh Website</title>
-  
-  <!-- (A) styles css -->
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>CSV to HTML Table</title>
+</head>
+<body>
+  <button id="load-csv">Load CSV</button>
+  <div id="csv-table"></div>
 
-  <!-- (A) JAVASCRIPT -->
-  <!-- https://sheetjs.com/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-</head>
-
-<body>
-
-
-
-<button id="load-csv">Load CSV</button>
-<div id="csv-table"></div>
-
-
-<script>
-  function arrayToTable(tableData) {
-    var table = $('<table></table>');
-    $(tableData).each(function(i, rowData) {
-      var row = $('<tr></tr>');
-      $(rowData).each(function(j, cellData) {
-        row.append($('<td>'+cellData+'</td>'));
-      });
-      table.append(row);
-    });
-    return table;
-  }
-
-  $('#load-csv').click(function() {
-    $.ajax({
-      type: "GET",
-      url: "Quiz_CE21.csv",
-      success: function(data) {
-        $('#csv-table').html(arrayToTable(Papa.parse(data).data));
-      }
-    });
-  });
-</script>
-
-
-
-
-
-
-
-
-
-  <!-- (B) FILE PICKER -->
-  <input type="file" id="input" accept=".xls,.xlsx" onchange="handleFiles(this.files)">
-  
-  <button onclick="search()" class="search-button">Search</button>
-  <h4> Quizes, exercises, assignment results:</h4>
-  <table id="QEA_results" class="styled-table">
-    <!-- Table data will be inserted here -->
-  </table>
-
   <script>
-    function search() {
-      var file = new File('Quiz.xlsx');
-      //let fileInput = document.getElementById('fileInput');
-      //let file = fileInput.files[0];'
-      handleFiles(file);
+    function arrayToTable(tableData) {
+      var table = $('<table></table>');
+      $(tableData).each(function(i, rowData) {
+        var row = $('<tr></tr>');
+        $(rowData).each(function(j, cellData) {
+          row.append($('<td>'+cellData+'</td>'));
+        });
+        table.append(row);
+      });
+      return table;
     }
 
-    function handleFiles(files) {
-      let file = files[0];
-      let reader = new FileReader();
-      reader.onload = function(e) {
-        let data = e.target.result;
-        let workbook = XLSX.read(data, {type: 'binary'});
-        let sheetName = workbook.SheetNames[0];
-        let sheet = workbook.Sheets[sheetName];
-        let json = XLSX.utils.sheet_to_json(sheet);
-        generateTable(json);
-      }
-      reader.readAsBinaryString(file);
-    }
-  
-    function generateTable(data) {
-      clearTable('QEA_results')
-      let table = document.getElementById('QEA_results');
-      for (let i = 0; i < data.length; i++) {
-        let row = table.insertRow(-1);
-        for (let key in data[i]) {
-          let cell = row.insertCell(-1);
-          cell.innerHTML = data[i][key];
+    $('#load-csv').click(function() {
+      $.ajax({
+        type: "GET",
+        url: "Quiz_CE21.csv",
+        success: function(data) {
+          $('#csv-table').html(arrayToTable(Papa.parse(data).data));
         }
-      }
-    }
-
-    function clearTable(table_name){
-      document.getElementById(table_name).innerHTML = "";
-    }
+      });
+    });
   </script>
 </body>
-
 </html>
