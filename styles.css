@@ -1,40 +1,8 @@
-.search-container form {
-  position: relative;
-}
-.search-container form button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50px;
-  background: transparent;
-  border: transparent;
-  font-size: 20px;
-  color: #4b00ff;
-  cursor: pointer;
-  outline: 0;
-}
-
-.search-button {
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-}
-
 table {
   width: 100%;
 }
 th {
-  background-color: #04AA6D;
+  background-color: #a97f32;
   color: white;
 }
 
