@@ -1,49 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Excel to HTML Table</title>
-    <!-- (A) JAVASCRIPT -->
-    <!-- https://sheetjs.com/ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  </head>
-  <body>
-    <!-- (B) FILE PICKER -->
-    <input type="file" id="demoA" accept=".xls,.xlsx" />
 
-    <!-- (C) EMPTY TABLE -->
-    <table id="demoB"></table>
+<head>
+  <title>Excel to HTML Table</title>
+  <!-- (A) JAVASCRIPT -->
+  <!-- https://sheetjs.com/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
 
-    <!-- (D) JAVASCRIPT TO READ EXCEL FILE & GENERATE HTML TABLE -->
-    <script>
-      document.getElementById("demoA").onchange = (evt) => {
-        // (A) NEW FILE READER
-        var reader = new FileReader();
+<body>
+  <!-- (B) FILE PICKER -->
+  <input type="file" id="demoA" accept=".xls,.xlsx" />
 
-        // (B) ON FINISH LOADING
-        reader.addEventListener("loadend", (evt) => {
-          // (B1) GET HTML TABLE
-          var table = document.getElementById("demoB");
-          table.innerHTML = "";
+  <!-- (C) EMPTY TABLE -->
+  <table id="demoB"></table>
 
-          // (B2) GET THE FIRST WORKSHEET
-          var workbook = XLSX.read(evt.target.result, { type: "binary" }),
-            worksheet = workbook.Sheets[workbook.SheetNames[0]],
-            range = XLSX.utils.decode_range(worksheet["!ref"]);
+  <button onclick="search()" class="search-button">display</button>
+  <h4> Quizes, exercises, Assignment result:</h4>
+  <table id="qea_results" class="styled-table">
+    <!-- Table data will be inserted here -->
+  </table>
+  <!-- (D) JAVASCRIPT TO READ EXCEL FILE & GENERATE HTML TABLE -->
+  <script>
+    document.getElementById("demoA").onchange = (evt) => {
+      // (A) NEW FILE READER
+      var reader = new FileReader();
 
-          // (B3) READ EXCEL CELLS & INSERT ROWS/COLUMNS
-          for (let row = range.s.r; row <= range.e.r; row++) {
-            let r = table.insertRow();
-            for (let col = range.s.c; col <= range.e.c; col++) {
-              let c = r.insertCell(),
-                xcell = worksheet[XLSX.utils.encode_cell({ r: row, c: col })];
-              c.innerHTML = xcell.v;
-            }
+      // (B) ON FINISH LOADING
+      reader.addEventListener("loadend", (evt) => {
+        // (B1) GET HTML TABLE
+        var table = document.getElementById("demoB");
+        table.innerHTML = "";
+
+        // (B2) GET THE FIRST WORKSHEET
+        var workbook = XLSX.read(evt.target.result, { type: "binary" }),
+          worksheet = workbook.Sheets[workbook.SheetNames[0]],
+          range = XLSX.utils.decode_range(worksheet["!ref"]);
+
+        // (B3) READ EXCEL CELLS & INSERT ROWS/COLUMNS
+        for (let row = range.s.r; row <= range.e.r; row++) {
+          let r = table.insertRow();
+          for (let col = range.s.c; col <= range.e.c; col++) {
+            let c = r.insertCell(),
+              xcell = worksheet[XLSX.utils.encode_cell({ r: row, c: col })];
+            c.innerHTML = xcell.v;
           }
-        });
+        }
+      });
 
-        // (C) START - READ SELECTED EXCEL FILE
-        reader.readAsArrayBuffer(evt.target.files[0]);
-      };
-    </script>
-  </body>
+      // (C) START - READ SELECTED EXCEL FILE
+      reader.readAsArrayBuffer(evt.target.files[0]);
+    };
+    function search(){
+      read_excel_file_show_table("Quiz.xlsx", "qea_results")
+    }
+    function read_excel_file_show_table(excel_name, table_name) {
+      // (A) NEW FILE READER
+      var reader = new FileReader();
+
+      // (B) ON FINISH LOADING
+      reader.addEventListener("loadend", (evt) => {
+        // (B1) GET HTML TABLE
+        var table = document.getElementById(table_name);
+        table.innerHTML = "";
+
+        // (B2) GET THE FIRST WORKSHEET
+        var workbook = XLSX.read(excel_name, { type: "binary" }),
+          worksheet = workbook.Sheets[workbook.SheetNames[0]],
+          range = XLSX.utils.decode_range(worksheet["!ref"]);
+
+        // (B3) READ EXCEL CELLS & INSERT ROWS/COLUMNS
+        for (let row = range.s.r; row <= range.e.r; row++) {
+          let r = table.insertRow();
+          for (let col = range.s.c; col <= range.e.c; col++) {
+            let c = r.insertCell(),
+              xcell = worksheet[XLSX.utils.encode_cell({ r: row, c: col })];
+            c.innerHTML = xcell.v;
+          }
+        }
+      });
+
+      // (C) START - READ SELECTED EXCEL FILE
+      reader.readAsArrayBuffer(evt.target.files[0]);
+    }
+  </script>
+</body>
+
 </html>
