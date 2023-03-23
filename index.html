@@ -15,6 +15,10 @@
   <!-- The form -->
   <div>
     <form class="example" action="javascript:search()">
+      <select id="semester" name="options">
+        <option value="2023_HK222/">Năm 2023 Học kỳ 2</option>
+        <option value="2023_HK221/">Năm 2023 Học kỳ 1</option>
+      </select>
       <input type="text" id="searchField" placeholder="Student ID..." name="search">
       <button type="submit">Search</button>
     </form>
@@ -46,6 +50,7 @@
   <script>
     var file_path = "2023_HK222/";
     function search() {
+      file_path = document.getElementById("semester").value
       // Get the search value
       var searchValue = document.getElementById("searchField").value;
       var allscore_file_name = "allscores.csv";
