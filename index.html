@@ -2,13 +2,55 @@
 <html>
 
 <head>
-  <title>Excel to HTML Table</title>
+  <title>Thanh-Binh Website</title>
+  
+  <!-- (A) styles css -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
   <!-- (A) JAVASCRIPT -->
   <!-- https://sheetjs.com/ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
 </head>
 
 <body>
+
+  <script>
+    function arrayToTable(tableData) {
+      var table = $('<table></table>');
+      $(tableData).each(function(i, rowData) {
+        var row = $('<tr></tr>');
+        $(rowData).each(function(j, cellData) {
+          row.append($('<td>'+cellData+'</td>'));
+        });
+        table.append(row);
+      });
+      return table;
+    }
+    $.ajax({
+      type: "GET",
+      url: "CE21_Year2023/Quiz_CE21.csv",
+      success: function(data) {
+        $('body').append(arrayToTable(Papa.parse(data).data));
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- (B) FILE PICKER -->
   <input type="file" id="input" accept=".xls,.xlsx" onchange="handleFiles(this.files)">
   
@@ -20,7 +62,7 @@
 
   <script>
     function search() {
-      var file = File('Quiz.xlsx');
+      var file = new File('Quiz.xlsx');
       //let fileInput = document.getElementById('fileInput');
       //let file = fileInput.files[0];'
       handleFiles(file);
