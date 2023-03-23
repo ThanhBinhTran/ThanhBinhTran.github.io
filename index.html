@@ -5,10 +5,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.min.js"></script>
 </head>
 <body>
+    <h5> read excel file v10.02</h5>
     <input type="file" id="input" />
     <table id="output"></table>
     <script>
-        const input = document.getElementById('input');
+        //const input = document.getElementById('input');
+        const input = "Quiz_CE21.xlsx";
         const output = document.getElementById('output');
         input.addEventListener('change', () => {
             const reader = new FileReader();
