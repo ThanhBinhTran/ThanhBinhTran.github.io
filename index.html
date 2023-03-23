@@ -1,50 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Display Excel data in HTML Table using SheetJS in JavaScript</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.min.js"></script>
+  <title>Thanh-Binh Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-    <h5> read excel file v10.02</h5>
-    <input type="file" id="input" />
-    <table id="output"></table>
-    <script>
-        //const input = document.getElementById('input');
-        const input = "Quiz_CE21.xlsx";
-        const output = document.getElementById('output');
-        input.addEventListener('change', () => {
-            const reader = new FileReader();
-            reader.onload = () => {
-                const data = new Uint8Array(reader.result);
-                const workbook = XLSX.read(data, { type: 'array' });
-                const sheet = workbook.Sheets[workbook.SheetNames[0]];
-                const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-                const headers = json.shift();
-                const table = document.createElement('table');
-                const thead = document.createElement('thead');
-                const tbody = document.createElement('tbody');
-                const tr = document.createElement('tr');
-                headers.forEach(header => {
-                    const th = document.createElement('th');
-                    th.textContent = header;
-                    tr.appendChild(th);
-                });
-                thead.appendChild(tr);
-                json.forEach(row => {
-                    const tr = document.createElement('tr');
-                    row.forEach(cell => {
-                        const td = document.createElement('td');
-                        td.textContent = cell;
-                        tr.appendChild(td);
-                    });
-                    tbody.appendChild(tr);
-                });
-                table.appendChild(thead);
-                table.appendChild(tbody);
-                output.appendChild(table);
-            };
-            reader.readAsArrayBuffer(input.files[0]);
-        });
-    </script>
+  <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V10.14</h3>
+  <div>
+    <h4>Input student ID code</h4>
+    <input type="text" id="searchField" placeholder="Search...">
+    <button onclick="search()" class="search-button">Search</button>
+  </div>
+
+  <h4> Midterm result:</h4>
+  <table id="midterm_result_table" class="styled-table">
+    <!-- Table data will be inserted here -->
+  </table>
+
+  <script>
+    function search() {
+      // Get the search value
+      var searchValue = document.getElementById("searchField").value;
+
+      // Read the CSV file
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          // Parse the CSV data
+          var rows = xhr.responseText.split("\n");
+          var data = [];
+          for (var i = 0; i < rows.length; i++) {
+            data.push(rows[i].split(","));
+          }
+
+          // Search for matching rows
+          var results = [];
+          for (var i = 0; i < data.length; i++) {
+            for (var j = 0; j < data[i].length; j++) {
+              if (data[i][j].includes(searchValue)) {
+                results.push(data[i]);
+                break;
+              }
+            }
+          }
+
+          // Display the results in a table
+          var tableHtml = "";
+          for (var i = 0; i < results.length; i++) {
+            tableHtml += "<tr>";
+            for (var j = 0; j < results[i].length; j++) {
+              tableHtml += "<td>" + results[i][j] + "</td>";
+            }
+            tableHtml += "</tr>";
+          }
+
+          document.getElementById("midterm_result_table").innerHTML = "";
+          generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);
+          insertRow(results);
+        }
+      }
+      xhr.open("GET", "midterm.csv", true);
+      xhr.send();
+    }
+
+    function generateTableHeaders(headers) {
+      var table = document.getElementById("midterm_result_table");
+      var thead = table.createTHead();
+      var row = thead.insertRow();
+      for (var i = 0; i < headers.length; i++) {
+        var th = document.createElement("th");
+        th.innerHTML = headers[i];
+        row.appendChild(th);
+      }
+    }
+
+    function insertRow(data) {
+      var table = document.getElementById("midterm_result_table");
+      var row = table.insertRow(-1);
+      for (var i = 0; i < data.length; i++) {
+        var cell = row.insertCell(i);
+        cell.innerHTML = data[i];
+      }
+    }
+  </script>
 </body>
+
 </html>
