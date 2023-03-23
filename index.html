@@ -16,33 +16,35 @@
 
 <body>
 
-  <script>
-    function arrayToTable(tableData) {
-      var table = $('<table></table>');
-      $(tableData).each(function(i, rowData) {
-        var row = $('<tr></tr>');
-        $(rowData).each(function(j, cellData) {
-          row.append($('<td>'+cellData+'</td>'));
-        });
-        table.append(row);
+
+
+<button id="load-csv">Load CSV</button>
+<div id="csv-table"></div>
+
+
+<script>
+  function arrayToTable(tableData) {
+    var table = $('<table></table>');
+    $(tableData).each(function(i, rowData) {
+      var row = $('<tr></tr>');
+      $(rowData).each(function(j, cellData) {
+        row.append($('<td>'+cellData+'</td>'));
       });
-      return table;
-    }
+      table.append(row);
+    });
+    return table;
+  }
+
+  $('#load-csv').click(function() {
     $.ajax({
       type: "GET",
-      url: "CE21_Year2023/Quiz_CE21.csv",
+      url: "Quiz_CE21.csv",
       success: function(data) {
-        $('body').append(arrayToTable(Papa.parse(data).data));
-        <h1>test v12.58</h1>
+        $('#csv-table').html(arrayToTable(Papa.parse(data).data));
       }
     });
-  </script>
-
-
-
-
-
-
+  });
+</script>
 
 
 
