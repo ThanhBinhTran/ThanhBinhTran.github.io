@@ -1,8 +1,12 @@
 var file_path = "2023_HK222/";
 function search() {
-  file_path = document.getElementById("semester").value
+  file_path = document.getElementById("semester").value;
   // Get the search value
   var searchValue = document.getElementById("searchField").value;
+  if (searchValue.value.length == 0) {
+    alert("Input field is empty!");
+    return;
+  }
   var allscore_file_name = "allscores.csv";
   var allscore_table_name = "all_results_table"
   read_filter_display_csv(searchValue, allscore_file_name, allscore_table_name);
