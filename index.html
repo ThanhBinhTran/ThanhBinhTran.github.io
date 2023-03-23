@@ -15,12 +15,12 @@
   </div>
 
   <h4> Overall score results:</h4>
-  <table id="QEA_results" class="styled-table">
+  <table id="QEA_result_table" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
 
   <h4> Midterm results:</h4>
-  <table id="QEA_results" class="styled-table">
+  <table id="midterm_results" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
 
@@ -37,7 +37,12 @@
     function search() {
       // Get the search value
       var searchValue = document.getElementById("searchField").value;
+      var file_name = "Quiz.csv";
+      var table_name = "QEA_result_table"
+      read_filter_display_csv(searchValue, file_name, table_name);
+    }
 
+    function read_filter_display_csv(filterString, file_name, table_name){
       // Read the CSV file
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
@@ -53,7 +58,7 @@
           var results = [];
           for (var i = 0; i < data.length; i++) {
             for (var j = 0; j < data[i].length; j++) {
-              if (data[i][j].includes(searchValue)) {
+              if (data[i][j].includes(filterString)) {
                 results.push(data[i]);
                 break;
               }
@@ -61,16 +66,14 @@
           }
 
           // Display the results in a table
-          var table_name = "QEA_results"
           clearTable(table_name)
           generateTableHeaders(table_name, data[0]);
           insertRow(table_name, results);
         }
       }
-      xhr.open("GET", "Quiz_CE21.csv", true);
+      xhr.open("GET", file_name, true);
       xhr.send();
     }
-
     function clearTable(table_name){
       document.getElementById(table_name).innerHTML = "";
     }
