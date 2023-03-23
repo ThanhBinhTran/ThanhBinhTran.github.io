@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Excel to HTML Table</title>
+    <title>Thanh-Binh Website</title>
     <!-- (A) JAVASCRIPT -->
     <!-- https://sheetjs.com/ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- (A1) STYLES -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
   </head>
   <body>
+    <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V10.14</h3>
+    <div>
+      <h4>Input student ID code</h4>
+      <input type="text" id="searchField" placeholder="Search...">
+      <button onclick="search()" class="search-button">Search</button>
+    </div>
+  
+
+
     <!-- (B) FILE PICKER -->
     <input type="file" id="demoA" accept=".xls,.xlsx" />
 
     <!-- (C) EMPTY TABLE -->
-    <table id="demoB"></table>
+    <h4> Quizes, Exercises, Assignment results:</h4>
+    <table id="QEA_result_table" class="styled-table">
+      <!-- Table data will be inserted here -->
+    </table>
 
     <!-- (D) JAVASCRIPT TO READ EXCEL FILE & GENERATE HTML TABLE -->
     <script>
@@ -22,7 +38,7 @@
         // (B) ON FINISH LOADING
         reader.addEventListener("loadend", (evt) => {
           // (B1) GET HTML TABLE
-          var table = document.getElementById("demoB");
+          var table = document.getElementById("midterm_result_table");
           table.innerHTML = "";
 
           // (B2) GET THE FIRST WORKSHEET
