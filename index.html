@@ -61,10 +61,9 @@
           }
 
           // Display the results in a table
-          var table_name = "QEA_results";
-          clearTable(table_name)
-          generateTableHeaders(table_name, data[0]);
-          insertRow(table_name, results);
+          clearTable('QEA_results')
+          generateTableHeaders('QEA_results', data[0]);
+          insertRow('QEA_results', results);
         }
       }
       xhr.open("GET", "Quiz_CE21.csv", true);
