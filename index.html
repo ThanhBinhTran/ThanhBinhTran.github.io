@@ -10,10 +10,7 @@
 
 <body>
   <!-- (B) FILE PICKER -->
-  <input type="file" id="demoA" accept=".xls,.xlsx" />
-
-  <input type="file" id="input" onchange="handleFiles(this.files)">
-  <table id="table"></table>
+  <input type="file" id="input" accept=".xls,.xlsx" onchange="handleFiles(this.files)">
   
   <button onclick="search()" class="search-button">Search</button>
   <h4> Quizes, exercises, assignment results:</h4>
@@ -25,7 +22,7 @@
     function search() {
       handleFiles("Quiz.xlsx")
     }
-    
+
     function handleFiles(files) {
       let file = files[0];
       let reader = new FileReader();
@@ -41,7 +38,8 @@
     }
   
     function generateTable(data) {
-      let table = document.getElementById('table');
+      clearTable('QEA_results')
+      let table = document.getElementById('QEA_results');
       for (let i = 0; i < data.length; i++) {
         let row = table.insertRow(-1);
         for (let key in data[i]) {
@@ -49,6 +47,10 @@
           cell.innerHTML = data[i][key];
         }
       }
+    }
+
+    function clearTable(table_name){
+      document.getElementById(table_name).innerHTML = "";
     }
   </script>
 </body>
