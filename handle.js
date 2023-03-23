@@ -36,7 +36,8 @@ function read_filter_display_csv(filterString, file_name, table_name) {
       var results = [];
       for (var i = 0; i < data.length; i++) {
         for (var j = 0; j < data[i].length; j++) {
-          if (data[i][j].includes(filterString)) {
+          //if (data[i][j].includes(filterString)) {
+          if (data[i][j] == filterString) {
             results.push(data[i]);
             break;
           }
