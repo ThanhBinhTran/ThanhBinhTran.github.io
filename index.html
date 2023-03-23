@@ -3,13 +3,7 @@
 
 <head>
   <title>Thanh-Binh Website</title>
-  <style>
-    table,
-    th,
-    td {
-      border: 1px solid black;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -17,11 +11,10 @@
   <div>
     <h4>Input student ID code</h4>
     <input type="text" id="searchField" placeholder="Search...">
-    <button onclick="search()">Search</button>
+    <button onclick="search()" class="search-button">Search</button>
   </div>
 
-
-  <table id="midterm_result_table">
+  <table id="midterm_result_table" class="styled-table">
     <!-- Table data will be inserted here -->
     <thead>
       <tr>
@@ -73,8 +66,8 @@
             }
             tableHtml += "</tr>";
           }
-          
-          //document.getElementById("midterm_result_table").innerHTML = tableHtml;
+
+          document.getElementById("midterm_result_table").innerHTML = "";
           generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);
           insertRow(results);
         }
@@ -84,23 +77,23 @@
     }
 
     function generateTableHeaders(headers) {
-        var table = document.getElementById("midterm_result_table");
-        var thead = table.createTHead();
-        var row = thead.insertRow();
-        for (var i = 0; i < headers.length; i++) {
-            var th = document.createElement("th");
-            th.innerHTML = headers[i];
-            row.appendChild(th);
-        }
+      var table = document.getElementById("midterm_result_table");
+      var thead = table.createTHead();
+      var row = thead.insertRow();
+      for (var i = 0; i < headers.length; i++) {
+        var th = document.createElement("th");
+        th.innerHTML = headers[i];
+        row.appendChild(th);
+      }
     }
 
     function insertRow(data) {
-        var table = document.getElementById("midterm_result_table");
-        var row = table.insertRow(-1);
-        for (var i = 0; i < data.length; i++) {
-            var cell = row.insertCell(-1);
-            cell.innerHTML = data[i];
-        }
+      var table = document.getElementById("midterm_result_table");
+      var row = table.insertRow(-1);
+      for (var i = 0; i < data.length; i++) {
+        var cell = row.insertCell(i);
+        cell.innerHTML = data[i];
+      }
     }
   </script>
 </body>
