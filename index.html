@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <h4>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V14.21</h4>
+  <h4>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V14.23</h4>
   <div>
     <text>Input student ID code</text>
     <input type="text" id="searchField" placeholder="search...">
@@ -61,20 +61,21 @@
           }
 
           // Display the results in a table
-          clearTable()
-          generateTableHeaders(data[0]);
-          insertRow(results);
+          var table_name = "QEA_results"
+          clearTable(table_name)
+          generateTableHeaders(table_name, data[0]);
+          insertRow(table_name, results);
         }
       }
       xhr.open("GET", "Quiz_CE21.csv", true);
       xhr.send();
     }
 
-    function clearTable(){
-      document.getElementById("QEA_results").innerHTML = "";
+    function clearTable(table_name){
+      document.getElementById(table_name).innerHTML = "";
     }
-    function generateTableHeaders(headers) {
-      var table = document.getElementById("QEA_results");
+    function generateTableHeaders(table_name,headers) {
+      var table = document.getElementById(table_name);
       var thead = table.createTHead();
       var row = thead.insertRow();
       for (var i = 0; i < headers.length; i++) {
@@ -83,10 +84,10 @@
         row.appendChild(th);
       }
     }
-    function insertRow(rows_data) {
+    function insertRow(table_name,rows_data) {
       console.log(rows_data.length);
       console.log(rows_data[0]);
-      var table = document.getElementById("QEA_results");
+      var table = document.getElementById(table_name);
       var row = table.insertRow(-1);
       for (var i = 0; i < rows_data.length; i++) {
         row_items = rows_data[i];
