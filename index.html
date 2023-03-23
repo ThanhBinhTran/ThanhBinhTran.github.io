@@ -55,17 +55,20 @@
       read_excel_file_show_table("Quiz.xlsx", "qea_results")
     }
     function read_excel_file_show_table(excel_name, table_name) {
+      
       // (A) NEW FILE READER
+      var file = excel_name.files[0];
       var reader = new FileReader();
 
       // (B) ON FINISH LOADING
       reader.addEventListener("loadend", (evt) => {
-        // (B1) GET HTML TABLE
+        // (B1) GET HTML 
+        
         var table = document.getElementById(table_name);
         table.innerHTML = "";
 
         // (B2) GET THE FIRST WORKSHEET
-        var workbook = XLSX.read(excel_name, { type: "binary" }),
+        var workbook = XLSX.read(file, { type: "binary" }),
           worksheet = workbook.Sheets[workbook.SheetNames[0]],
           range = XLSX.utils.decode_range(worksheet["!ref"]);
 
@@ -81,7 +84,7 @@
       });
 
       // (C) START - READ SELECTED EXCEL FILE
-      reader.readAsArrayBuffer(evt.target.files[0]);
+      reader.readAsArrayBuffer(file);
     }
   </script>
 </body>
