@@ -15,7 +15,7 @@
   </div>
 
   <h4> Overall score results:</h4>
-  <table id="QEA_result_table" class="styled-table">
+  <table id="all_result_table" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
 
@@ -37,12 +37,17 @@
     function search() {
       // Get the search value
       var searchValue = document.getElementById("searchField").value;
-      var quiz_file_name = "Quiz.csv";
-      var quiz_table_name = "QEA_result_table"
-      read_filter_display_csv(searchValue, quiz_file_name, quiz_table_name);
+      var allscore_file_name = "allscores.csv";
+      var allscore_table_name = "all_result_table"
+      read_filter_display_csv(searchValue, allscore_file_name, allscore_table_name);
+
       var midterm_file_name = "midterm.csv";
       var midterm_table_name = "midterm_results"
       read_filter_display_csv(searchValue, midterm_file_name, midterm_table_name);
+
+      var quiz_file_name = "Quiz.csv";
+      var quiz_table_name = "QEA_result_table"
+      read_filter_display_csv(searchValue, quiz_file_name, quiz_table_name);
     }
 
     function read_filter_display_csv(filterString, file_name, table_name){
