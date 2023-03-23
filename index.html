@@ -41,33 +41,28 @@
           for (var i = 0; i < data.length; i++) {
             for (var j = 0; j < data[i].length; j++) {
               if (data[i][j].includes(searchValue)) {
-                results = data[i];
+                results.push(data[i]);
                 break;
               }
             }
           }
 
           // Display the results in a table
-          var tableHtml = "";
-          for (var i = 0; i < results.length; i++) {
-            tableHtml += "<tr>";
-            for (var j = 0; j < results[i].length; j++) {
-              tableHtml += "<td>" + results[i][j] + "</td>";
-            }
-            tableHtml += "</tr>";
-          }
-
-          document.getElementById("QEA_results").innerHTML = "";
-          generateTableHeaders(data[0]);
-          insertRow(results);
+          var table_name = "QEA_results";
+          clearTable(table_name)
+          generateTableHeaders(table_name, data[0]);
+          insertRow(table_name, results);
         }
       }
       xhr.open("GET", "Quiz_CE21.csv", true);
       xhr.send();
     }
 
-    function generateTableHeaders(headers) {
-      var table = document.getElementById("QEA_results");
+    function clearTable(table_name){
+      document.getElementById(table_name).innerHTML = "";
+    }
+    function generateTableHeaders(table_name,headers) {
+      var table = document.getElementById(table_name);
       var thead = table.createTHead();
       var row = thead.insertRow();
       for (var i = 0; i < headers.length; i++) {
@@ -76,17 +71,16 @@
         row.appendChild(th);
       }
     }
-
-    function insertRow(data) {
-      console.log(data.length);
-      console.log(data[0]);
-      var table = document.getElementById("QEA_results");
+    function insertRow(table_name, rows_data) {
+      console.log(rows_data.length);
+      console.log(rows_data[0]);
+      var table = document.getElementById(table_name);
       var row = table.insertRow(-1);
-      for (var i = 0; i < data.length; i++) {
-        var row_data = data[i];
+      for (var i = 0; i < rows_data.length; i++) {
+        var row_data = rows_data[i];
         for (var j = 0; j < row_data.length; i++) {
           var cell = row.insertCell(i);
-          cell.innerHTML = data[i];
+          cell.innerHTML = rows_data[i];
         }
       }
     }
