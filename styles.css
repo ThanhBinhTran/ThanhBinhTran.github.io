@@ -30,6 +30,9 @@
   border-radius: 16px;
 }
 
+table {
+  width: 100%;
+}
 th {
   background-color: #04AA6D;
   color: white;
