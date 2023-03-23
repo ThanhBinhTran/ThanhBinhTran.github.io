@@ -68,8 +68,8 @@ function insertRow(table_name, rows_data) {
   console.log(rows_data.length);
   console.log(rows_data[0]);
   var table = document.getElementById(table_name);
-  var row = table.insertRow(-1);
   for (var i = 0; i < rows_data.length; i++) {
+    var row = table.insertRow(-1);
     row_items = rows_data[i];
     for (var j = 0; j < row_items.length; j++) {
       var cell = row.insertCell(j);
