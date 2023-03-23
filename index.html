@@ -1,37 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>CSV to HTML Table</title>
-</head>
-<body>
-  <button id="load-csv">Load CSV</button>
-  <div id="csv-table"></div>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+<head>
+  <title>Thanh-Binh Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V10.14</h3>
+  <div>
+    <h4>Input student ID code</h4>
+    <input type="text" id="searchField" placeholder="Search...">
+    <button onclick="search()" class="search-button">Search</button>
+  </div>
+
+  <h4> Midterm result:</h4>
+  <h4> Quizes, exercises, assignment results:</h4>
+  <table id="QEA_results" class="styled-table">
+    <!-- Table data will be inserted here -->
+  </table>
+
   <script>
-    function arrayToTable(tableData) {
-      var table = $('<table></table>');
-      $(tableData).each(function(i, rowData) {
-        var row = $('<tr></tr>');
-        $(rowData).each(function(j, cellData) {
-          row.append($('<td>'+cellData+'</td>'));
-        });
-        table.append(row);
-      });
-      return table;
+    function search() {
+      // Get the search value
+      var searchValue = document.getElementById("searchField").value;
+
+      // Read the CSV file
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          // Parse the CSV data
+          var rows = xhr.responseText.split("\n");
+          var data = [];
+          for (var i = 0; i < rows.length; i++) {
+            data.push(rows[i].split(","));
+          }
+
+          // Search for matching rows
+          var results = [];
+          for (var i = 0; i < data.length; i++) {
+            for (var j = 0; j < data[i].length; j++) {
+              if (data[i][j].includes(searchValue)) {
+                results.push(data[i]);
+                break;
+              }
+            }
+          }
+
+          // Display the results in a table
+          var tableHtml = "";
+          for (var i = 0; i < results.length; i++) {
+            tableHtml += "<tr>";
+            for (var j = 0; j < results[i].length; j++) {
+              tableHtml += "<td>" + results[i][j] + "</td>";
+            }
+            tableHtml += "</tr>";
+          }
+
+          document.getElementById("QEA_results").innerHTML = "";
+          generateTableHeaders(data[0]);
+          insertRow(results);
+        }
+      }
+      xhr.open("GET", "Quiz_CE21.csv", true);
+      xhr.send();
     }
 
-    $('#load-csv').click(function() {
-      $.ajax({
-        type: "GET",
-        url: "Quiz_CE21.csv",
-        success: function(data) {
-          $('#csv-table').html(arrayToTable(Papa.parse(data).data));
-        }
-      });
-    });
+    function generateTableHeaders(headers) {
+      var table = document.getElementById("QEA_results");
+      var thead = table.createTHead();
+      var row = thead.insertRow();
+      for (var i = 0; i < headers.length; i++) {
+        var th = document.createElement("th");
+        th.innerHTML = headers[i];
+        row.appendChild(th);
+      }
+    }
+
+    function insertRow(data) {
+      var table = document.getElementById("QEA_results");
+      var row = table.insertRow(-1);
+      for (var i = 0; i < data.length; i++) {
+        var cell = row.insertCell(i);
+        cell.innerHTML = data[i];
+      }
+    }
   </script>
 </body>
+
 </html>
