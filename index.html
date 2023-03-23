@@ -12,7 +12,12 @@
     <input type="text" id="searchField" placeholder="input your studentID">
     <button onclick="search()" class="search-button">Search</button>
   </div>
-  
+  <!-- The form -->
+  <form class="example">
+    <input type="text" placeholder="Search.." name="search">
+    <button onclick="search()">Search</button>
+  </form>
+
   <b>Overall score results:</b>
   <table id="all_results_table" class="styled-table">
     <!-- Table data will be inserted here -->
@@ -50,7 +55,7 @@
       read_filter_display_csv(searchValue, quiz_file_name, quiz_table_name);
     }
 
-    function read_filter_display_csv(filterString, file_name, table_name){
+    function read_filter_display_csv(filterString, file_name, table_name) {
       // Read the CSV file
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
@@ -83,10 +88,10 @@
       xhr.open("GET", file_path + file_name, true);
       xhr.send();
     }
-    function clearTable(table_name){
+    function clearTable(table_name) {
       document.getElementById(table_name).innerHTML = "";
     }
-    function generateTableHeaders(table_name,headers) {
+    function generateTableHeaders(table_name, headers) {
       var table = document.getElementById(table_name);
       var thead = table.createTHead();
       var row = thead.insertRow();
@@ -96,14 +101,14 @@
         row.appendChild(th);
       }
     }
-    function insertRow(table_name,rows_data) {
+    function insertRow(table_name, rows_data) {
       console.log(rows_data.length);
       console.log(rows_data[0]);
       var table = document.getElementById(table_name);
       var row = table.insertRow(-1);
       for (var i = 0; i < rows_data.length; i++) {
         row_items = rows_data[i];
-        for (var j =0; j < row_items.length; j++){
+        for (var j = 0; j < row_items.length; j++) {
           var cell = row.insertCell(j);
           cell.innerHTML = row_items[j];
         }
