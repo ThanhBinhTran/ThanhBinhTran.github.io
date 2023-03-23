@@ -15,12 +15,14 @@
   <!-- (C) EMPTY TABLE -->
   <table id="demoB"></table>
 
-  <button onclick="search()" class="search-button">display</button>
+  <button onclick="search()" class="search-button">display v11.11</button>
   <h4> Quizes, exercises, Assignment result:</h4>
   <table id="qea_results" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
   <!-- (D) JAVASCRIPT TO READ EXCEL FILE & GENERATE HTML TABLE -->
+  
+  
   <script>
     document.getElementById("demoA").onchange = (evt) => {
       // (A) NEW FILE READER
@@ -68,7 +70,7 @@
         table.innerHTML = "";
 
         // (B2) GET THE FIRST WORKSHEET
-        var workbook = XLSX.read(file, { type: "binary" }),
+        var workbook = XLSX.read(excel_name, { type: "binary" }),
           worksheet = workbook.Sheets[workbook.SheetNames[0]],
           range = XLSX.utils.decode_range(worksheet["!ref"]);
 
@@ -84,7 +86,7 @@
       });
 
       // (C) START - READ SELECTED EXCEL FILE
-      reader.readAsArrayBuffer(file);
+      reader.readAsArrayBuffer(excel_name);
     }
   </script>
 </body>
