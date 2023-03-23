@@ -12,81 +12,43 @@
   <!-- (B) FILE PICKER -->
   <input type="file" id="demoA" accept=".xls,.xlsx" />
 
-  <!-- (C) EMPTY TABLE -->
-  <table id="demoB"></table>
-
-  <button onclick="search()" class="search-button">display v11.11</button>
-  <h4> Quizes, exercises, Assignment result:</h4>
-  <table id="qea_results" class="styled-table">
+  <input type="file" id="input" onchange="handleFiles(this.files)">
+  <table id="table"></table>
+  
+  <button onclick="search()" class="search-button">Search</button>
+  <h4> Quizes, exercises, assignment results:</h4>
+  <table id="QEA_results" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
-  <!-- (D) JAVASCRIPT TO READ EXCEL FILE & GENERATE HTML TABLE -->
-  
-  
+
   <script>
-    document.getElementById("demoA").onchange = (evt) => {
-      // (A) NEW FILE READER
-      var reader = new FileReader();
-
-      // (B) ON FINISH LOADING
-      reader.addEventListener("loadend", (evt) => {
-        // (B1) GET HTML TABLE
-        var table = document.getElementById("demoB");
-        table.innerHTML = "";
-
-        // (B2) GET THE FIRST WORKSHEET
-        var workbook = XLSX.read(evt.target.result, { type: "binary" }),
-          worksheet = workbook.Sheets[workbook.SheetNames[0]],
-          range = XLSX.utils.decode_range(worksheet["!ref"]);
-
-        // (B3) READ EXCEL CELLS & INSERT ROWS/COLUMNS
-        for (let row = range.s.r; row <= range.e.r; row++) {
-          let r = table.insertRow();
-          for (let col = range.s.c; col <= range.e.c; col++) {
-            let c = r.insertCell(),
-              xcell = worksheet[XLSX.utils.encode_cell({ r: row, c: col })];
-            c.innerHTML = xcell.v;
-          }
-        }
-      });
-
-      // (C) START - READ SELECTED EXCEL FILE
-      reader.readAsArrayBuffer(evt.target.files[0]);
-    };
-    function search(){
-      read_excel_file_show_table("Quiz.xlsx", "qea_results")
+    function search() {
+      handleFiles("Quiz.xlsx")
     }
-    function read_excel_file_show_table(excel_name, table_name) {
-      
-      // (A) NEW FILE READER
-      var file = excel_name.files[0];
-      var reader = new FileReader();
-
-      // (B) ON FINISH LOADING
-      reader.addEventListener("loadend", (evt) => {
-        // (B1) GET HTML 
-        
-        var table = document.getElementById(table_name);
-        table.innerHTML = "";
-
-        // (B2) GET THE FIRST WORKSHEET
-        var workbook = XLSX.read(excel_name, { type: "binary" }),
-          worksheet = workbook.Sheets[workbook.SheetNames[0]],
-          range = XLSX.utils.decode_range(worksheet["!ref"]);
-
-        // (B3) READ EXCEL CELLS & INSERT ROWS/COLUMNS
-        for (let row = range.s.r; row <= range.e.r; row++) {
-          let r = table.insertRow();
-          for (let col = range.s.c; col <= range.e.c; col++) {
-            let c = r.insertCell(),
-              xcell = worksheet[XLSX.utils.encode_cell({ r: row, c: col })];
-            c.innerHTML = xcell.v;
-          }
+    
+    function handleFiles(files) {
+      let file = files[0];
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        let data = e.target.result;
+        let workbook = XLSX.read(data, {type: 'binary'});
+        let sheetName = workbook.SheetNames[0];
+        let sheet = workbook.Sheets[sheetName];
+        let json = XLSX.utils.sheet_to_json(sheet);
+        generateTable(json);
+      }
+      reader.readAsBinaryString(file);
+    }
+  
+    function generateTable(data) {
+      let table = document.getElementById('table');
+      for (let i = 0; i < data.length; i++) {
+        let row = table.insertRow(-1);
+        for (let key in data[i]) {
+          let cell = row.insertCell(-1);
+          cell.innerHTML = data[i][key];
         }
-      });
-
-      // (C) START - READ SELECTED EXCEL FILE
-      reader.readAsArrayBuffer(excel_name);
+      }
     }
   </script>
 </body>
