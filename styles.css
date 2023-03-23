@@ -72,17 +72,23 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header {
+  display: flex;
+  align-items: center;
   background-color: #ed763e;
   color: white;
   padding: 20px;
 }
+
 header img {
-  float: left;
+  height: auto;
+  max-width: 100%;
 }
 
-header h1 {
-  margin-left: 100px;
+header h2 {
+  flex-grow: 1;
+  margin-left: 20px;
 }
 
 nav ul {
