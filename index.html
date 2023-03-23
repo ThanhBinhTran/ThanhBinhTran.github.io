@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <h2>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V13.18</h2>
+  <h4>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V13.18</h4>
   <div>
     <text>Input student ID code</text>
     <input type="text" id="searchField" placeholder="Search...">
@@ -79,12 +79,15 @@
 
     function insertRow(data) {
       console.log(data.length);
-      console.log(data[1]);
+      console.log(data[0]);
       var table = document.getElementById("QEA_results");
       var row = table.insertRow(-1);
       for (var i = 0; i < data.length; i++) {
-        var cell = row.insertCell(i);
-        cell.innerHTML = data[i];
+        var row_data = data[i];
+        for (var j = 0; j < row_data.length; i++) {
+          var cell = row.insertCell(i);
+          cell.innerHTML = data[i];
+        }
       }
     }
   </script>
