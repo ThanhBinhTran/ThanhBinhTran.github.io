@@ -30,13 +30,7 @@
   border-radius: 16px;
 }
 
-table {
-  border-collapse: collapse;
-}
 th {
   background-color: #04AA6D;
   color: white;
-}
-th, td {
-  border: 1px solid black;
 }
