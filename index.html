@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <h4>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V14.23</h4>
+  <h4>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V14.31</h4>
   <div>
     <text>Input student ID code</text>
     <input type="text" id="searchField" placeholder="search...">
@@ -37,9 +37,12 @@
     function search() {
       // Get the search value
       var searchValue = document.getElementById("searchField").value;
-      var file_name = "Quiz.csv";
-      var table_name = "QEA_result_table"
-      read_filter_display_csv(searchValue, file_name, table_name);
+      var quiz_file_name = "Quiz.csv";
+      var quiz_table_name = "QEA_result_table"
+      read_filter_display_csv(searchValue, quiz_file_name, quiz_table_name);
+      var midterm_file_name = "midterm.csv";
+      var midterm_table_name = "midterm_results"
+      read_filter_display_csv(searchValue, midterm_file_name, midterm_table_name);
     }
 
     function read_filter_display_csv(filterString, file_name, table_name){
