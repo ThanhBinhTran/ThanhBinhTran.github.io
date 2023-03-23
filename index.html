@@ -1,65 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Thanh-Binh Website</title>
-    <!-- (A) JAVASCRIPT -->
-    <!-- https://sheetjs.com/ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
-    <!-- (A1) STYLES -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    
-  </head>
-  <body>
-    <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V10.14</h3>
-    <div>
-      <h4>Input student ID code</h4>
-      <input type="text" id="searchField" placeholder="Search...">
-      <button onclick="search()" class="search-button">Search</button>
-    </div>
-  
+<head>
+  <title>Thanh-Binh Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 
+<body>
+  <h3>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V10.14</h3>
+  <div>
+    <h4>Input student ID code</h4>
+    <input type="text" id="searchField" placeholder="Search...">
+    <button onclick="search()" class="search-button">Search</button>
+  </div>
 
-    <!-- (B) FILE PICKER -->
-    <input type="file" id="demoA" accept=".xls,.xlsx" />
+  <h4> Midterm result:</h4>
+  <table id="midterm_result_table" class="styled-table">
+    <!-- Table data will be inserted here -->
+  </table>
 
-    <!-- (C) EMPTY TABLE -->
-    <h4> Quizes, Exercises, Assignment results:</h4>
-    <table id="QEA_result_table" class="styled-table">
-      <!-- Table data will be inserted here -->
-    </table>
+  <script>
+    function search() {
+      // Get the search value
+      var searchValue = document.getElementById("searchField").value;
 
-    <!-- (D) JAVASCRIPT TO READ EXCEL FILE & GENERATE HTML TABLE -->
-    <script>
-      document.getElementById("demoA").onchange = (evt) => {
-        // (A) NEW FILE READER
-        var reader = new FileReader();
+      // Read the CSV file
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          // Parse the CSV data
+          var rows = xhr.responseText.split("\n");
+          var data = [];
+          for (var i = 0; i < rows.length; i++) {
+            data.push(rows[i].split(","));
+          }
 
-        // (B) ON FINISH LOADING
-        reader.addEventListener("loadend", (evt) => {
-          // (B1) GET HTML TABLE
-          var table = document.getElementById("midterm_result_table");
-          table.innerHTML = "";
-
-          // (B2) GET THE FIRST WORKSHEET
-          var workbook = XLSX.read(evt.target.result, { type: "binary" }),
-            worksheet = workbook.Sheets[workbook.SheetNames[0]],
-            range = XLSX.utils.decode_range(worksheet["!ref"]);
-
-          // (B3) READ EXCEL CELLS & INSERT ROWS/COLUMNS
-          for (let row = range.s.r; row <= range.e.r; row++) {
-            let r = table.insertRow();
-            for (let col = range.s.c; col <= range.e.c; col++) {
-              let c = r.insertCell(),
-                xcell = worksheet[XLSX.utils.encode_cell({ r: row, c: col })];
-              c.innerHTML = xcell.v;
+          // Search for matching rows
+          var results = [];
+          for (var i = 0; i < data.length; i++) {
+            for (var j = 0; j < data[i].length; j++) {
+              if (data[i][j].includes(searchValue)) {
+                results.push(data[i]);
+                break;
+              }
             }
           }
-        });
 
-        // (C) START - READ SELECTED EXCEL FILE
-        reader.readAsArrayBuffer(evt.target.files[0]);
-      };
-    </script>
-  </body>
+          // Display the results in a table
+          var tableHtml = "";
+          for (var i = 0; i < results.length; i++) {
+            tableHtml += "<tr>";
+            for (var j = 0; j < results[i].length; j++) {
+              tableHtml += "<td>" + results[i][j] + "</td>";
+            }
+            tableHtml += "</tr>";
+          }
+
+          document.getElementById("midterm_result_table").innerHTML = "";
+          generateTableHeaders(["MSSV", "Last Name", "First Name", "Midterm (20%)", "Lab (10%)", "Assignment (20 +10)%", "FinalExam"]);
+          insertRow(results);
+        }
+      }
+      xhr.open("GET", "midterm.csv", true);
+      xhr.send();
+    }
+
+    function generateTableHeaders(headers) {
+      var table = document.getElementById("midterm_result_table");
+      var thead = table.createTHead();
+      var row = thead.insertRow();
+      for (var i = 0; i < headers.length; i++) {
+        var th = document.createElement("th");
+        th.innerHTML = headers[i];
+        row.appendChild(th);
+      }
+    }
+
+    function insertRow(data) {
+      var table = document.getElementById("midterm_result_table");
+      var row = table.insertRow(-1);
+      for (var i = 0; i < data.length; i++) {
+        var cell = row.insertCell(i);
+        cell.innerHTML = data[i];
+      }
+    }
+  </script>
+</body>
+
 </html>
