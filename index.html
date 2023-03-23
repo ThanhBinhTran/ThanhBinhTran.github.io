@@ -10,7 +10,7 @@
   <h4>Computer Architecture course [KIẾN TRÚC MÁY TÍNH (CO2007)_TRẦN THANH BÌNH (CQ_HK222)] V13.18</h4>
   <div>
     <text>Input student ID code</text>
-    <input type="text" id="searchField" placeholder="Search...">
+    <input type="text" id="searchField" placeholder="2110826">
     <button onclick="search()" class="search-button">Search</button>
   </div>
 
@@ -41,7 +41,7 @@
           for (var i = 0; i < data.length; i++) {
             for (var j = 0; j < data[i].length; j++) {
               if (data[i][j].includes(searchValue)) {
-                results.push(data[i]);
+                results = data[i];
                 break;
               }
             }
