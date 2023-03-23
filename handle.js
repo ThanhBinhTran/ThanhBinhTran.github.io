@@ -47,8 +47,8 @@ function read_filter_display_csv(filterString, file_name, table_name) {
       insertRow(table_name, results);
     }
   }
-  console.log("file name: " + file_path + file_name);
-  xhr.open("GET", file_path + file_name, true);
+  console.log("file name: " + course_result_repo + file_path + file_name);
+  xhr.open("GET", course_result_repo + file_path + file_name, true);
   xhr.send();
 }
 function clearTable(table_name) {
