@@ -15,22 +15,22 @@
   </div>
 
   <h4> Overall score results:</h4>
-  <table id="all_result_table" class="styled-table">
-    <!-- Table data will be inserted here -->
-  </table>
-
-  <h4> Midterm results:</h4>
-  <table id="midterm_results" class="styled-table">
+  <table id="all_results_table" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
 
   <h4> Finalexam:</h4>
-  <table id="QEA_results" class="styled-table">
+  <table id="finalexam_results_table" class="styled-table">
+    <!-- Table data will be inserted here -->
+  </table>
+
+  <h4> Midterm results:</h4>
+  <table id="midterm_results_table" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
 
   <h4> Quizes, exercises, assignment results:</h4>
-  <table id="QEA_results" class="styled-table">
+  <table id="QEA_results_table" class="styled-table">
     <!-- Table data will be inserted here -->
   </table>
   <script>
@@ -38,15 +38,15 @@
       // Get the search value
       var searchValue = document.getElementById("searchField").value;
       var allscore_file_name = "allscores.csv";
-      var allscore_table_name = "all_result_table"
+      var allscore_table_name = "all_results_table"
       read_filter_display_csv(searchValue, allscore_file_name, allscore_table_name);
 
       var midterm_file_name = "midterm.csv";
-      var midterm_table_name = "midterm_results"
+      var midterm_table_name = "midterm_results_table"
       read_filter_display_csv(searchValue, midterm_file_name, midterm_table_name);
 
       var quiz_file_name = "Quiz.csv";
-      var quiz_table_name = "QEA_result_table"
+      var quiz_table_name = "QEA_results_table"
       read_filter_display_csv(searchValue, quiz_file_name, quiz_table_name);
     }
 
