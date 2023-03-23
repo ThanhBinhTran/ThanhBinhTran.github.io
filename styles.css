@@ -77,6 +77,14 @@ header {
   color: white;
   padding: 20px;
 }
+header img {
+  float: left;
+}
+
+header h1 {
+  margin-left: 100px;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
