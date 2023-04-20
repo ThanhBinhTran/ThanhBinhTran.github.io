@@ -1,5 +1,5 @@
 var file_path = "2023_HK222/";
-var instruction = "Select semester then input student ID\nCurrent semeter is 'HK II 2022-2023'"
+var instruction = "Select semester then input student ID. Current semeter is 'HK II 2022-2023'"
 window.onload = function() {
   document.getElementById("instruction").innerHTML = instruction;
 };
