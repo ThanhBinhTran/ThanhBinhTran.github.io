@@ -56,9 +56,11 @@ function read_filter_display_csv(filterString, file_name, table_name) {
   xhr.open("GET", fname, true);
   xhr.send();
 }
+
 function clearTable(table_name) {
   document.getElementById(table_name).innerHTML = "";
 }
+
 function generateTableHeaders(table_name, headers) {
   var table = document.getElementById(table_name);
   var thead = table.createTHead();
@@ -69,6 +71,7 @@ function generateTableHeaders(table_name, headers) {
     row.appendChild(th);
   }
 }
+
 function insertRow(table_name, rows_data) {
   
   var table = document.getElementById(table_name);
