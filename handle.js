@@ -14,6 +14,10 @@ function search() {
   var allscore_table_name = "all_results_table"
   read_filter_display_csv(searchValue, allscore_file_name, allscore_table_name);
 
+  var finalexam_file_name = "finalexam.csv";
+  var finalexam_table_name = "finalexam_results_table"
+  read_filter_display_csv(searchValue, finalexam_file_name, finalexam_table_name);
+
   var midterm_file_name = "midterm.csv";
   var midterm_table_name = "midterm_results_table"
   read_filter_display_csv(searchValue, midterm_file_name, midterm_table_name);
