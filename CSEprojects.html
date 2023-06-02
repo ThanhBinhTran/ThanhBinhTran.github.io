@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<head>
+  <title>HCMUT Computer Science and Engineering projects</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <script> var course_result_repo = "CSEprojectsScore"</script>
+  <script src="handle.js"> </script>
+
+  <header>
+    <img src="Figures/logo_hcmut.png" alt="Logo" width="90">
+    <h2>HCMUT Computer Science and Engineering projects</h2>
+  </header>
+
+  <!-- The form -->
+  <div>
+    <h4 id="instruction"></h4>
+    <form class="example" action="javascript:search()">
+      <select id="semester" name="options">
+        <option value="2023_HK222/">Năm 2023 Học kỳ 2</option>
+        <option value="2023_HK221/">Năm 2023 Học kỳ 1</option>
+      </select>
+      <input type="text" id="searchField" placeholder="Student ID..." name="search" required>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+
+  <div>
+    <h6></h6>
+    <b>FINAL scores:</b>
+    <table id="all_results_table" class="styled-table">
+      <!-- Table data will be inserted here -->
+    </table>
+  </div>
+
+  <div>
+    <h6></h6>
+    <b>Finalexam (not available for this subject):</b>
+    <table id="finalexam_results_table" class="styled-table">
+      <!-- Table data will be inserted here -->
+    </table>
+  </div>
+
+  <div>
+    <h6></h6>
+    <b>Midterm (not available for this subject):</b>
+    <table id="midterm_results_table" class="styled-table">
+      <!-- Table data will be inserted here -->
+    </table>
+  </div>
+
+  <div>
+    <h6></h6>
+    <b>Quizes, exercises, assignment (not available for this subject):</b>
+    <table id="QEA_results_table" class="styled-table">
+      <!-- Table data will be inserted here -->
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy2023 Thanh-Binh Tran. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
