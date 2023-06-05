@@ -6,6 +6,12 @@ th {
   color: white;
 }
 
+/* test style */
+/* last sentence is right-aligned*/
+p.lr {
+  text-align-last: right;
+}
+
 
 * {
   box-sizing: border-box;
