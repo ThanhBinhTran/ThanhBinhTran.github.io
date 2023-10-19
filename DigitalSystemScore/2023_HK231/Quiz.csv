@@ -18,42 +18,42 @@ Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
 2352761,PHẠM QUANG,MINH,DS_6,9,,,,,
 2352082,Hoàng Xuân,Bách,DS_7,7,,,,,
 2352422,NGUYỄN GIA,HÙNG,DS_7,7,,,,,
-2353017,Trịnh Lương Nhất,Quân,DS_8,8,,,,,"lab1 late submission, lack of implementation"
-2352968,NGÔ VĨNH,QUANG,DS_8,8,,,,,"lab1 late submission, lack of implementation"
-2353219,LÊ HỮU,TRIỀU,DS_8,8,,,,,"lab1 late submission, lack of implementation"
-2352406,PHÙNG GIA,HUY,DS_9,8,,,,,"lab1 late submission, experimental results were unclear, 3 leds for 1 output?"
-2352812,LÊ MINH,NGỌC,DS_9,8,,,,,"lab1 late submission, experimental results were unclear, 3 leds for 1 output?"
-2353207,NGUYỄN PHÙNG BẢO,TRÂN,DS_9,8,,,,,"lab1 late submission, experimental results were unclear, 3 leds for 1 output?"
-2352464,ĐẶNG THÁI,KHANG,DS_10,7,,,,,"lab1 late submission, missing 2.4.3, NO student ID in report?"
-2352611,NGUYỄN ĐÌNH,KHÔI,DS_10,7,,,,,"lab1 late submission, missing 2.4.3, NO student ID in report?"
-2353322,NGUYỄN PHẠM LƯƠNG,VIỆT,DS_10,7,,,,,"lab1 late submission, missing 2.4.3, NO student ID in report?"
-2352112,TRỊNH VŨ THIÊN,BẢO,DS_11,7,,,,,"lab1 late submission, report without word to explain experiments, no studentID in report"
-2352652,Nguyễn Tuấn,Kiệt,DS_11,7,,,,,"lab1 late submission, report without word to explain experiments, no studentID in report"
-2353024,Hồ Minh,Quốc,DS_11,7,,,,,"lab1 late submission, report without word to explain experiments, no studentID in report"
-2352707,VŨ HOÀNG,LONG,DS_12,7.5,,,,,"lab1 late submission, lack of implementation and experimental results"
-2353124,Trần Mạnh,Thắng,DS_12,7.5,,,,,"lab1 late submission, lack of implementation and experimental results"
-2353214,Nguyễn Minh,Triết,DS_12,7.5,,,,,"lab1 late submission, lack of implementation and experimental results"
-2352331,NGUYỄN THANH,HIẾU,DS_13,7.5,,,,,"lab1 late submission, lack of implementation and experimental results"
-2352346,CHU LÊ,HOÀNG,DS_13,7.5,,,,,"lab1 late submission, lack of implementation and experimental results"
-2311916,NGUYỄN VĂN HẢI,LONG,DS_13,7.5,,,,,"lab1 late submission, lack of implementation and experimental results"
-2352257,VÕ LÊ HẢI,ĐĂNG,DS_14,8,,,,,"lab1 late submission, experimental results were good, but no word to explain, submit in word format (should be in pdf format)"
-2352397,Nguyễn Quốc,Huy,DS_14,8,,,,,"lab1 late submission, experimental results were good, but no word to explain, submit in word format (should be in pdf format)"
-2352614,Nguyễn Hữu Minh,Khôi,DS_15,9,,,,,lab1 late submision
-2352785,PHẠM NHẬT,NAM,DS_15,9,,,,,lab1 late submision
-2353035,ĐOÀN THIÊN,QUÝ,DS_15,9,,,,,lab1 late submision
-2352220,DƯƠNG DUY,ĐẠT,DS_16,9,,,,,lab1 late submision
-2352573,NGUYỄN ĐÌNH,KHOA,DS_16,9,,,,,lab1 late submision
-2353326,VŨ QUỐC,VIỆT,DS_16,9,,,,,lab1 late submision
-2350006,PHẠM TRUNG,HIẾU,DS_17,9,,,,,lab1 late submision
-2350022,NGUYỄN TRẦN MINH,QUANG,DS_17,9,,,,,lab1 late submision
-2353101,NGUYỄN DUY,THÀNH,DS_17,9,,,,,lab1 late submision
+2353017,Trịnh Lương Nhất,Quân,DS_8,8.5,,,,,", lack of implementation"
+2352968,NGÔ VĨNH,QUANG,DS_8,8.5,,,,,", lack of implementation"
+2353219,LÊ HỮU,TRIỀU,DS_8,8.5,,,,,", lack of implementation"
+2352406,PHÙNG GIA,HUY,DS_9,8.5,,,,,", experimental results were unclear, 3 leds for 1 output?"
+2352812,LÊ MINH,NGỌC,DS_9,8.5,,,,,", experimental results were unclear, 3 leds for 1 output?"
+2353207,NGUYỄN PHÙNG BẢO,TRÂN,DS_9,8.5,,,,,", experimental results were unclear, 3 leds for 1 output?"
+2352464,ĐẶNG THÁI,KHANG,DS_10,7.5,,,,,", missing 2.4.3, NO student ID in report?"
+2352611,NGUYỄN ĐÌNH,KHÔI,DS_10,7.5,,,,,", missing 2.4.3, NO student ID in report?"
+2353322,NGUYỄN PHẠM LƯƠNG,VIỆT,DS_10,7.5,,,,,", missing 2.4.3, NO student ID in report?"
+2352112,TRỊNH VŨ THIÊN,BẢO,DS_11,7.5,,,,,", report without word to explain experiments, no studentID in report"
+2352652,Nguyễn Tuấn,Kiệt,DS_11,7.5,,,,,", report without word to explain experiments, no studentID in report"
+2353024,Hồ Minh,Quốc,DS_11,7.5,,,,,", report without word to explain experiments, no studentID in report"
+2352707,VŨ HOÀNG,LONG,DS_12,8.5,,,,,", lack of implementation and experimental results"
+2353124,Trần Mạnh,Thắng,DS_12,8.5,,,,,", lack of implementation and experimental results"
+2353214,Nguyễn Minh,Triết,DS_12,8.5,,,,,", lack of implementation and experimental results"
+2352331,NGUYỄN THANH,HIẾU,DS_13,8,,,,,", lack of implementation and experimental results"
+2352346,CHU LÊ,HOÀNG,DS_13,8,,,,,", lack of implementation and experimental results"
+2311916,NGUYỄN VĂN HẢI,LONG,DS_13,8,,,,,", lack of implementation and experimental results"
+2352257,VÕ LÊ HẢI,ĐĂNG,DS_14,8,,,,,", experimental results were good, but no word to explain, submit in word format (should be in pdf format)"
+2352397,Nguyễn Quốc,Huy,DS_14,8,,,,,", experimental results were good, but no word to explain, submit in word format (should be in pdf format)"
+2352614,Nguyễn Hữu Minh,Khôi,DS_15,10,,,,,
+2352785,PHẠM NHẬT,NAM,DS_15,10,,,,,
+2353035,ĐOÀN THIÊN,QUÝ,DS_15,10,,,,,
+2352220,DƯƠNG DUY,ĐẠT,DS_16,10,,,,,
+2352573,NGUYỄN ĐÌNH,KHOA,DS_16,10,,,,,
+2353326,VŨ QUỐC,VIỆT,DS_16,10,,,,,
+2350006,PHẠM TRUNG,HIẾU,DS_17,10,,,,,
+2350022,NGUYỄN TRẦN MINH,QUANG,DS_17,10,,,,,
+2353101,NGUYỄN DUY,THÀNH,DS_17,10,,,,,
 2352998,Nguyễn Hoàng,Quân,DS_18,9,,,,,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
 2353002,NGUYỄN LÊ HẢI,QUÂN,DS_18,9,,,,,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
 2353276,TRẦN ANH,TUẤN,DS_18,9,,,,,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
-2352205,ĐẶNG QUANG,DŨNG,DS_19,9.5,,,,,lab1 late submission
-2352522,Lê Nguyễn Nam,Khánh,DS_19,9.5,,,,,lab1 late submission
-2352704,Trần Hữu Hoàng,Long,DS_19,9.5,,,,,lab1 late submission
+2352205,ĐẶNG QUANG,DŨNG,DS_19,10,,,,,
+2352522,Lê Nguyễn Nam,Khánh,DS_19,10,,,,,
+2352704,Trần Hữu Hoàng,Long,DS_19,10,,,,,
 2352110,TRẦN QUỐC,BẢO,DS_,0,,,,,NO submission found
 2352230,Lữ Đình Quốc,Đạt,DS_,0,,,,,NO submission found
-2353226,Hoàng Minh,Trí,DS_20,7,,,,,"lab1 late submission, no Student ID in report, missing 2.4.3 exercise, no words decrible attached images"
-2350034,NGUYỄN TÔN,VĨNH,DS_20,7,,,,,"lab1 late submission, no Student ID in report, missing 2.4.3 exercise, no words decrible attached images"
+2353226,Hoàng Minh,Trí,DS_20,7,,,,,", no Student ID in report, missing 2.4.3 exercise, no words decrible attached images"
+2350034,NGUYỄN TÔN,VĨNH,DS_20,7,,,,,", no Student ID in report, missing 2.4.3 exercise, no words decrible attached images"
