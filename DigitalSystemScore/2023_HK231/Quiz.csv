@@ -1,23 +1,23 @@
 Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
-2352012,NGUYỄN TRƯỜNG,AN,DS_1,10,,,,,
-2214089,BÙI ĐÌNH AN,LỘC,DS_1,10,,,,,
-2353096,Đỗ Tài,Thành,DS_1,10,,,,,
-2352551,DƯƠNG ĐĂNG,KHOA,DS_2,7.5,,,,,
-2353157,TRỊNH VIẾT,THỤ,DS_2,7.5,,,,,
-2352056,Nguyễn Tuấn,Anh,DS_3,7.5,,,,,
-2352439,NGUYỄN TẤN,HƯNG,DS_3,7.5,,,,,
-2350023,PHẠM ANH,TÀI,DS_3,7.5,,,,,
-2352022,CHU NGUYỄN TUẤN,ANH,DS_4,10,,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
-2352173,ĐỖ MINH,DUY,DS_4,10,,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
-2353084,Phan Bá,Thanh,DS_4,10,,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
-2352053,NGUYỄN THIỆN,ANH,DS_5,10,,,,,
-2352097,NGUYỄN LÊ GIA,BẢO,DS_5,10,,,,,
-2353077,LÝ TRẦN,TÂN,DS_5,10,,,,,
-2352116,Trần Lam,Biểu,DS_6,9,,,,,
-2352647,TRẦN VỸ,KIỆN,DS_6,9,,,,,
-2352761,PHẠM QUANG,MINH,DS_6,9,,,,,
-2352082,Hoàng Xuân,Bách,DS_7,7,,,,,
-2352422,NGUYỄN GIA,HÙNG,DS_7,7,,,,,
+2352012,NGUYỄN TRƯỜNG,AN,DS_1,10,10,,,,
+2214089,BÙI ĐÌNH AN,LỘC,DS_1,10,10,,,,
+2353096,Đỗ Tài,Thành,DS_1,10,10,,,,
+2352551,DƯƠNG ĐĂNG,KHOA,DS_2,7.5,8,,,,lab2: lack of experimental results
+2353157,TRỊNH VIẾT,THỤ,DS_2,7.5,8,,,,lab2: lack of experimental results
+2352056,Nguyễn Tuấn,Anh,DS_3,7.5,8,,,,lab2: late submission
+2352439,NGUYỄN TẤN,HƯNG,DS_3,7.5,8,,,,lab2: late submission
+2350023,PHẠM ANH,TÀI,DS_3,7.5,8,,,,lab2: late submission
+2352022,CHU NGUYỄN TUẤN,ANH,DS_4,10,10,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
+2352173,ĐỖ MINH,DUY,DS_4,10,10,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
+2353084,Phan Bá,Thanh,DS_4,10,10,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
+2352053,NGUYỄN THIỆN,ANH,DS_5,10,10,,,,
+2352097,NGUYỄN LÊ GIA,BẢO,DS_5,10,10,,,,
+2353077,LÝ TRẦN,TÂN,DS_5,10,10,,,,
+2352116,Trần Lam,Biểu,DS_6,9,10,,,,
+2352647,TRẦN VỸ,KIỆN,DS_6,9,10,,,,
+2352761,PHẠM QUANG,MINH,DS_6,9,10,,,,
+2352082,Hoàng Xuân,Bách,DS_7,7,8,,,,"lab2: wrong imlementaion (image for led a,b,c)"
+2352422,NGUYỄN GIA,HÙNG,DS_7,7,8,,,,"lab2: wrong imlementaion (image for led a,b,c)"
 2353017,Trịnh Lương Nhất,Quân,DS_8,8.5,10,,,,lack of implementation
 2352968,NGÔ VĨNH,QUANG,DS_8,8.5,10,,,,lack of implementation
 2353219,LÊ HỮU,TRIỀU,DS_8,8.5,10,,,,lack of implementation
