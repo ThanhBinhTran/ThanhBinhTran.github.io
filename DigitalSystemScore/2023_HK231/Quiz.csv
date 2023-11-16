@@ -1,23 +1,23 @@
 Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
-2352012,NGUYỄN TRƯỜNG,AN,DS_01,10,10,,,,
-2214089,BÙI ĐÌNH AN,LỘC,DS_01,10,10,,,,
-2353096,Đỗ Tài,Thành,DS_01,10,10,,,,
-2352551,DƯƠNG ĐĂNG,KHOA,DS_02,7.5,8,,,,lab2: lack of experimental results
-2353157,TRỊNH VIẾT,THỤ,DS_02,7.5,8,,,,lab2: lack of experimental results
+2352012,NGUYỄN TRƯỜNG,AN,DS_01,10,10,10,,,
+2214089,BÙI ĐÌNH AN,LỘC,DS_01,10,10,10,,,
+2353096,Đỗ Tài,Thành,DS_01,10,10,10,,,
+2352551,DƯƠNG ĐĂNG,KHOA,DS_02,7.5,8,10,,,lab2: lack of experimental results
+2353157,TRỊNH VIẾT,THỤ,DS_02,7.5,8,10,,,lab2: lack of experimental results
 2352056,Nguyễn Tuấn,Anh,DS_03,7.5,8,,,,lab2: late submission
 2352439,NGUYỄN TẤN,HƯNG,DS_03,7.5,8,,,,lab2: late submission
 2350023,PHẠM ANH,TÀI,DS_03,7.5,8,,,,lab2: late submission
-2352022,CHU NGUYỄN TUẤN,ANH,DS_04,10,10,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
-2352173,ĐỖ MINH,DUY,DS_04,10,10,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
-2353084,Phan Bá,Thanh,DS_04,10,10,,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
-2352053,NGUYỄN THIỆN,ANH,DS_05,10,10,,,,
-2352097,NGUYỄN LÊ GIA,BẢO,DS_05,10,10,,,,
-2353077,LÝ TRẦN,TÂN,DS_05,10,10,,,,
-2352116,Trần Lam,Biểu,DS_06,9,10,,,,
-2352647,TRẦN VỸ,KIỆN,DS_06,9,10,,,,
-2352761,PHẠM QUANG,MINH,DS_06,9,10,,,,
-2352082,Hoàng Xuân,Bách,DS_07,7,8,,,,"lab2: wrong imlementaion (image for led a,b,c)"
-2352422,NGUYỄN GIA,HÙNG,DS_07,7,8,,,,"lab2: wrong imlementaion (image for led a,b,c)"
+2352022,CHU NGUYỄN TUẤN,ANH,DS_04,10,10,10,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
+2352173,ĐỖ MINH,DUY,DS_04,10,10,10,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
+2353084,Phan Bá,Thanh,DS_04,10,10,10,,,"do not attach video in DS report, instead insert images, it takes me to another place to watch your videos and score your report"
+2352053,NGUYỄN THIỆN,ANH,DS_05,10,10,9.5 (no simulation results for exercise .2),,,
+2352097,NGUYỄN LÊ GIA,BẢO,DS_05,10,10,9.5 (no simulation results for exercise .2),,,
+2353077,LÝ TRẦN,TÂN,DS_05,10,10,9.5 (no simulation results for exercise .2),,,
+2352116,Trần Lam,Biểu,DS_06,9,10,10,,,
+2352647,TRẦN VỸ,KIỆN,DS_06,9,10,10,,,
+2352761,PHẠM QUANG,MINH,DS_06,9,10,10,,,
+2352082,Hoàng Xuân,Bách,DS_07,7,8,4(no video link was provided; need to improve report),,,"lab2: wrong imlementaion (image for led a,b,c)"
+2352422,NGUYỄN GIA,HÙNG,DS_07,7,8,4(no video link was provided; need to improve report),,,"lab2: wrong imlementaion (image for led a,b,c)"
 2353017,Trịnh Lương Nhất,Quân,DS_08,8.5,10,"7.5 (missing simulation; why led flash faster in some cases?, late submission)",,,lack of implementation
 2352968,NGÔ VĨNH,QUANG,DS_08,8.5,10,"7.5 (missing simulation; why led flash faster in some cases?, late submission)",,,lack of implementation
 2353219,LÊ HỮU,TRIỀU,DS_08,8.5,10,"7.5 (missing simulation; why led flash faster in some cases?, late submission)",,,lack of implementation
@@ -33,10 +33,10 @@ Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
 2352707,VŨ HOÀNG,LONG,DS_12,8.5,10,10,,,lack of implementation and experimental results
 2353124,Trần Mạnh,Thắng,DS_12,8.5,10,10,,,lack of implementation and experimental results
 2353214,Nguyễn Minh,Triết,DS_12,8.5,10,10,,,lack of implementation and experimental results
-2352110,TRẦN QUỐC,BẢO,DS_13,0,3,9 (video for simulations in poor quality),,,lab2 your own work?
-2352331,NGUYỄN THANH,HIẾU,DS_13,8,10,9 (video for simulations in poor quality),,,lack of implementation and experimental results
-2352346,CHU LÊ,HOÀNG,DS_13,8,10,9 (video for simulations in poor quality),,,lack of implementation and experimental results
-2311916,NGUYỄN VĂN HẢI,LONG,DS_13,8,10,9 (video for simulations in poor quality),,,lack of implementation and experimental results
+2352110,TRẦN QUỐC,BẢO,DS_13,0,3,9.5 (all video for simulations are in poor quality),,,lab2 your own work?
+2352331,NGUYỄN THANH,HIẾU,DS_13,8,10,9.5 (all video for simulations are in poor quality),,,lack of implementation and experimental results
+2352346,CHU LÊ,HOÀNG,DS_13,8,10,9.5 (all video for simulations are in poor quality),,,lack of implementation and experimental results
+2311916,NGUYỄN VĂN HẢI,LONG,DS_13,8,10,9.5 (all video for simulations are in poor quality),,,lack of implementation and experimental results
 2352257,VÕ LÊ HẢI,ĐĂNG,DS_14,8,10,10,,,"experimental results were good, but no word to explain, submit in word format (should be in pdf format)"
 2352397,Nguyễn Quốc,Huy,DS_14,8,10,10,,,"experimental results were good, but no word to explain, submit in word format (should be in pdf format)"
 2352614,Nguyễn Hữu Minh,Khôi,DS_15,10,10,10,,,
