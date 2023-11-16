@@ -45,9 +45,9 @@ Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
 2352220,DƯƠNG DUY,ĐẠT,DS_16,10,10,10,,,
 2352573,NGUYỄN ĐÌNH,KHOA,DS_16,10,10,10,,,
 2353326,VŨ QUỐC,VIỆT,DS_16,10,10,10,,,
-2350006,PHẠM TRUNG,HIẾU,DS_17,10,9.5,9 (missing cases for simulations exe1 and 2),,,caption: cases from left to right up to down or up down first? 
-2350022,NGUYỄN TRẦN MINH,QUANG,DS_17,10,9.5,9 (missing cases for simulations exe1 and 2),,,caption: cases from left to right up to down or up down first? 
-2353101,NGUYỄN DUY,THÀNH,DS_17,10,9.5,9 (missing cases for simulations exe1 and 2),,,caption: cases from left to right up to down or up down first? 
+2350006,PHẠM TRUNG,HIẾU,DS_17,10,10,9 (missing cases for simulations exe1 and 2),,,
+2350022,NGUYỄN TRẦN MINH,QUANG,DS_17,10,10,9 (missing cases for simulations exe1 and 2),,,
+2353101,NGUYỄN DUY,THÀNH,DS_17,10,10,9 (missing cases for simulations exe1 and 2),,,
 2352998,Nguyễn Hoàng,Quân,DS_18,9,10,9 (missing simulation cases for exe1),,,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
 2353002,NGUYỄN LÊ HẢI,QUÂN,DS_18,9,10,9 (missing simulation cases for exe1),,,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
 2353276,TRẦN ANH,TUẤN,DS_18,9,10,9 (missing simulation cases for exe1),,,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
