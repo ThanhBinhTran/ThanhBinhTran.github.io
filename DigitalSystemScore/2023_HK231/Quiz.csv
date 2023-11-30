@@ -30,9 +30,9 @@ Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
 2352112,TRỊNH VŨ THIÊN,BẢO,DS_11,7.5,10,8.0 (why LED _QA blink faster then 1 second in some cases? no clock; ...; x signals in exercise 3; how do i the relationship amongs them?),10,,"report without word to explain experiments, no studentID in report"
 2352652,Nguyễn Tuấn,Kiệt,DS_11,7.5,10,8.0 (why LED _QA blink faster then 1 second in some cases? no clock; ...; x signals in exercise 3; how do i the relationship amongs them?),10,,"report without word to explain experiments, no studentID in report"
 2353024,Hồ Minh,Quốc,DS_11,7.5,10,8.0 (why LED _QA blink faster then 1 second in some cases? no clock; ...; x signals in exercise 3; how do i the relationship amongs them?),10,,"report without word to explain experiments, no studentID in report"
-2352707,VŨ HOÀNG,LONG,DS_12,8.5,10,10,9.5(exe .3 no design and no simulation results),,lack of implementation and experimental results
-2353124,Trần Mạnh,Thắng,DS_12,8.5,10,10,9.5(exe .3 no design and no simulation results),,lack of implementation and experimental results
-2353214,Nguyễn Minh,Triết,DS_12,8.5,10,10,9.5(exe .3 no design and no simulation results),,lack of implementation and experimental results
+2352707,VŨ HOÀNG,LONG,DS_12,8.5,10,10,10,,lack of implementation and experimental results
+2353124,Trần Mạnh,Thắng,DS_12,8.5,10,10,10,,lack of implementation and experimental results
+2353214,Nguyễn Minh,Triết,DS_12,8.5,10,10,10,,lack of implementation and experimental results
 2352110,TRẦN QUỐC,BẢO,DS_13,0,3,9.5 (all video for simulations are in poor quality),"8.5(exe .1 should mention the names of the pins; exe .2 no design, no explaination for simulation; the result looks wrong; exe .3 implemental results wrong)",,lab2 your own work?
 2352331,NGUYỄN THANH,HIẾU,DS_13,8,10,9.5 (all video for simulations are in poor quality),"8.5(exe .1 should mention the names of the pins; exe .2 no design, no explaination for simulation; the result looks wrong; exe .3 implemental results wrong)",,lack of implementation and experimental results
 2352346,CHU LÊ,HOÀNG,DS_13,8,10,9.5 (all video for simulations are in poor quality),"8.5(exe .1 should mention the names of the pins; exe .2 no design, no explaination for simulation; the result looks wrong; exe .3 implemental results wrong)",,lack of implementation and experimental results
@@ -45,9 +45,9 @@ Mã số ID,Họ,Tên,Group,Lab1,Lab2,Lab3,Lab4,Lab5,remark
 2352220,DƯƠNG DUY,ĐẠT,DS_16,10,10,10,10 (exe .1 wrong lable name for simulation; bonus no design and simulation),,
 2352573,NGUYỄN ĐÌNH,KHOA,DS_16,10,10,10,10 (exe .1 wrong lable name for simulation; bonus no design and simulation),,
 2353326,VŨ QUỐC,VIỆT,DS_16,10,10,10,10 (exe .1 wrong lable name for simulation; bonus no design and simulation),,
-2350006,PHẠM TRUNG,HIẾU,DS_17,10,10,9 (missing cases for simulations exe1 and 2),"4(exe .1 wrong truth table and simulation results; exe .2 no simulation results? exe .3 the order of simulation result, no video found for imlementation ?; exe3bonus make no sense)",,
-2350022,NGUYỄN TRẦN MINH,QUANG,DS_17,10,10,9 (missing cases for simulations exe1 and 2),"4(exe .1 wrong truth table and simulation results; exe .2 no simulation results? exe .3 the order of simulation result, no video found for imlementation ?; exe3bonus make no sense)",,
-2353101,NGUYỄN DUY,THÀNH,DS_17,10,10,9 (missing cases for simulations exe1 and 2),"4(exe .1 wrong truth table and simulation results; exe .2 no simulation results? exe .3 the order of simulation result, no video found for imlementation ?; exe3bonus make no sense)",,
+2350006,PHẠM TRUNG,HIẾU,DS_17,10,10,9 (missing cases for simulations exe1 and 2),7,,
+2350022,NGUYỄN TRẦN MINH,QUANG,DS_17,10,10,9 (missing cases for simulations exe1 and 2),7,,
+2353101,NGUYỄN DUY,THÀNH,DS_17,10,10,9 (missing cases for simulations exe1 and 2),7,,
 2352998,Nguyễn Hoàng,Quân,DS_18,9,10,9 (missing simulation cases for exe1),"6.5 (no design, no implementation)",,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
 2353002,NGUYỄN LÊ HẢI,QUÂN,DS_18,9,10,9 (missing simulation cases for exe1),"6.5 (no design, no implementation)",,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
 2353276,TRẦN ANH,TUẤN,DS_18,9,10,9 (missing simulation cases for exe1),"6.5 (no design, no implementation)",,"no experiments for 2.4.1, no word for images (reader hard to understand what you want to express."
