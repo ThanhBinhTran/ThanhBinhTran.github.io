@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+<head>
+  <title>Digital System project</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <script> var course_result_repo = "DigitalSystemProjectScore" </script>
+  <script src="handle.js"> </script>
+
+  <header>
+    <img src="Figures/logo_hcmut.png" alt="Logo" width="90">
+    <h2>Digital System Practical and Exercises course result[HK222]</h2>
+  </header>
+
+  <!-- The form -->
+  <h4 id="instruction"></h4>
+  <form class="example" action="javascript:search()">
+    <select id="semester" name="options">
+      <option value="2023_HK231/">Năm học 2023-2024 Học kỳ 1</option>
+    </select>
+    <input type="text" id="searchField" placeholder="Student ID..." name="search" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <div>
+    <h6></h6>
+    <b>FINAL scores(included all BONUS):</b>
+    <table id="all_results_table" class="styled-table">
+      <!-- Table data will be inserted here -->
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy2023 Thanh-Binh Tran. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
