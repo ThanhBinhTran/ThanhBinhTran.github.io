@@ -1,41 +1,41 @@
 Mã số ID,Họ,Tên,ISA_Arithmetic,ISA_Control,CallingFunction_executionTime,FINAL EXERCISES (AVERAGE of 3),Assignment,Assignment comments,group
+2252441,LÊ HẢI,LONG,8 (no exercise 1.2; 1.3; 4.2),10 ,8 (did not show calling functions in report),8.50,0,copy:A,01_5
+2252658,VƯƠNG THANH,PHƯƠNG,10,10,9 (did not show calling functions in report),9.50,0,copy:A,01_5
+2252285,NGUYỄN PHƯỚC NGỌC,HƯƠNG,10,10,10,10.00,10,,02_4
+2252416,VŨ CAO,KỲ,9 (no seperation amongs exercises e.i. lab1_a lab1_b),10,10,9.50,10,,02_4
+2252833,LÊ THANH BẢO,TRÂN,9 (submit wrong files extension; no asm),9 (submit wrong files extension; no asm),10,9.50,10,,02_4
+2252189,NGUYỄN THIÊN,HẢI,9 (no report for exercise 4.b),10,9,9.50,0,copy:A,03_5
+2252270,VÕ NGUYỄN GIA,HUY,9 (no testcase for 4.2),10,10,9.50,0,copy:A,03_5
+2252125,VÕ LÝ ĐẮC,DUY,10,10 ,10,10.00,10,,04_5
+2252219,VÕ VĂN,HIẾU,8 (late submission),8 (late submission),0 (no source code attached),5.50,10,,04_5
+2252930,PHAN THẢO,VY,10,10,10,10.00,10,,04_5
 2252029,NGÔ QUANG,ANH,10,10,6,8.50,10,,05_5
+2252265,TRẦN NGỌC KHÁNH,HUY,7 (missing testcases; no seperation files (1a; 1b; 1c); late submission),7 (missing testcases; late submission),8 (no screenshot for calling function in report),7.50,10,,05_5
+2252405,NGUYỄN TUẤN,KIỆT,7 (missing testcases; late submission),7 (missing testcases; late submission),0 source code did not match with outputs in report,4.50,4,no link found; bad coding style; no middel-steps display; float not integer,06_4
+2153717,Trần Hữu,Phước,8 (late submission),8 (late submission),8 (no testcases were printed out for exe 1),8.00,4,no link found; bad coding style; no middel-steps display; float not integer,06_4
+2252361,THÂN NGUYỄN MINH,KHOA,10,10,no code shown in report as request,6.50,10,,07_5
+2252586,TRẦN LƯƠNG YẾN,NHI,9.5 (seperate lab2.1 and lab 2.2),10,10,10.00,10,,07_5
+2252881,NGUYỄN LÊ VÂN,TÚ,9.5 (no seperation files lab2.1_a and lab 2.1_b....),9 (submit wrong files extension; no asm; testcase for exe5 not clear),10,9.50,10,,07_5
 2252037,NGUYỄN TRẦN MINH,ANH,9.5 (no seperation files lab2.1_a and lab 2.1_b....),10,8,9.00,10,,08_4
 2252038,NGUYỄN TUẤN,ANH,9.5 (no seperation files lab2.1_a and lab 2.1_b....),10,10,10.00,10,,08_4
-2252064,LÊ NGUYÊN,BẢO,0 (no rreport found),0 (no rreport found),3,1.00,0,no assignment found,
-2252080,MAI QUỐC,BÌNH,8.5 (no testcase for 4.2),8 (late submission),10,9.00,7.5,no division; no calling function,10_1
-2252125,VÕ LÝ ĐẮC,DUY,10,10 ,10,10.00,10,,04_5
-2252189,NGUYỄN THIÊN,HẢI,9 (no report for exercise 4.b),10,9,9.50,0,copy:A,03_5
-2252219,VÕ VĂN,HIẾU,8 (late submission),8 (late submission),0 (no source code attached),5.50,10,,04_5
-2252224,VÕ DUY,HIỆU,7,7,9,7.50,10,,15_5
-2053063,Huỳnh Phi,Hùng,0 (no report found),0 (no report found),0 (plagiarism:codeA),0.00,2,no add.s sub.s mul.s div.s are allowed,09_1
-2252285,NGUYỄN PHƯỚC NGỌC,HƯƠNG,10,10,10,10.00,10,,02_4
-2252265,TRẦN NGỌC KHÁNH,HUY,7 (missing testcases; no seperation files (1a; 1b; 1c); late submission),7 (missing testcases; late submission),8 (no screenshot for calling function in report),7.50,10,,05_5
-2252270,VÕ NGUYỄN GIA,HUY,9 (no testcase for 4.2),10,10,9.50,0,copy:A,03_5
-2152626,Bùi Trần Minh,Khang,10,0 (no submission),0 (plagiarism:codeA),3.50,10,,15_5
-2252294,HUỲNH NGUYỄN PHÚC,KHANG,9 (no exercise 4.2),8 (late submission),8 (no screenshot for calling function in report),8.50,7.5,no division; no calling function,10_1
-2252345,ĐỖ TRƯỜNG,KHOA,8,8,9,8.50,10,,15_5
-2252346,HUỲNH MINH,KHOA,10,7 (no input shows in report; updated),8 ( did not show code; min_next_iteration),8.50,10,,11_3
-2252361,THÂN NGUYỄN MINH,KHOA,10,10,no code shown in report as request,6.50,10,,07_5
-2252405,NGUYỄN TUẤN,KIỆT,7 (missing testcases; late submission),7 (missing testcases; late submission),0 source code did not match with outputs in report,4.50,4,no link found; bad coding style; no middel-steps display; float not integer,06_4
-2252407,PHƯƠNG GIA,KIỆT,5.5 (no source code for 4.2; missing testcases; late submission),7 (missing testcases; late submission),8 (no code shown),7.00,10,,12_4
-2252416,VŨ CAO,KỲ,9 (no seperation amongs exercises e.i. lab1_a lab1_b),10,10,9.50,10,,02_4
-2252461,NGUYỄN XUÂN,LỘC,10,8 (late submission),5 (code did not match with code in report),7.50,10,,14_5
-2252441,LÊ HẢI,LONG,8 (no exercise 1.2; 1.3; 4.2),10 ,8 (did not show calling functions in report),8.50,0,copy:A,01_5
-2252448,THÁI BẢO,LONG,7 (no source code for exercise 4.1; late submission),0 (no submission),0 (no source code found),2.50,7.5,nostop program when input a=12;b=12 (or any cases of a==b); div/0 still get result?,13_1
 2212009,NGÔ NGỌC TRIỆU,MẪN,8 (no testcases for 4.2; not seperate files 1_a; 1_b; 1_c),10 ,10,9.50,10,,08_4
+2053063,Huỳnh Phi,Hùng,0 (no report found),0 (no report found),0 (plagiarism:codeA),0.00,2,"error (remove floating point instruction) then input a= 123.123, then / or + or - or * to see error",09_1
+2053246,Nguyễn Phạm Hoài,Nam,8,10,5,7.50,2,"error (remove floating point instruction) then input a= 123.123, then / or + or - or * to see error",09_1
+2252080,MAI QUỐC,BÌNH,8.5 (no testcase for 4.2),8 (late submission),10,9.00,7.5,no division; no calling function,10_1
+2252294,HUỲNH NGUYỄN PHÚC,KHANG,9 (no exercise 4.2),8 (late submission),8 (no screenshot for calling function in report),8.50,7.5,no division; no calling function,10_1
+2252346,HUỲNH MINH,KHOA,10,7 (no input shows in report; updated),8 ( did not show code; min_next_iteration),8.50,10,,11_3
+2252809,NGÔ THÁI MINH,TIẾN,0 (no testcase shown in report),0 (no submission),10,3.50,10,,11_3
+2252407,PHƯƠNG GIA,KIỆT,5.5 (no source code for 4.2; missing testcases; late submission),7 (missing testcases; late submission),8 (no code shown),7.00,10,,12_4
+2252498,ĐINH HẢI,NAM,6 (missing testcases),4 (missing testcases; late submission),0 (report not found),3.50,10,,12_4
+2252542,HUỲNH ĐỨC,NGUYÊN,10,10,10,10.00,10,,12_4
+2252448,THÁI BẢO,LONG,7 (no source code for exercise 4.1; late submission),0 (no submission),0 (no source code found),2.50,7.5,nostop program when input a=12;b=12 (or any cases of a==b); div/0 still get result?,13_1
 2252476,HUỲNH BÁ,MINH,9 (exercise 4.2 missing print string out),10,8 (did not show code),9.00,7.5,nostop program when input a=12;b=12 (or any cases of a==b); div/0 still get result?,13_1
 2252485,NGUYỄN XUÂN,MINH,6.5 (late submission; missing testcases; no word to seperate images),7 (report not clear no word to indicate exe1 exercise 2; late submission),5 (missing testcases; no code shown),6.00,7.5,nostop program when input a=12;b=12 (or any cases of a==b); div/0 still get result?,13_1
-2053246,Nguyễn Phạm Hoài,Nam,0 (no report found -2),10,0,3.50,2,no add.s sub.s mul.s div.s are allowed,09_1
-2252498,ĐINH HẢI,NAM,6 (missing testcases),4 (missing testcases; late submission),0 (report not found),3.50,10,,12_4
-2252540,ĐỖ HOÀNG BÌNH,NGUYÊN,0 (no submission),0 (no submission),0 (no report-no testcases),0.00,0,no assignment found,
-2252542,HUỲNH ĐỨC,NGUYÊN,10,10,10,10.00,10,,12_4
-2252586,TRẦN LƯƠNG YẾN,NHI,9.5 (seperate lab2.1 and lab 2.2),10,10,10.00,10,,07_5
-2153717,Trần Hữu,Phước,8 (late submission),8 (late submission),8 (no testcases were printed out for exe 1),8.00,4,no link found; bad coding style; no middel-steps display; float not integer,06_4
-2252658,VƯƠNG THANH,PHƯƠNG,10,10,9 (did not show calling functions in report),9.50,0,copy:A,01_5
-2252809,NGÔ THÁI MINH,TIẾN,0 (no testcase shown in report),0 (no submission),10,3.50,10,,11_3
+2252461,NGUYỄN XUÂN,LỘC,10,8 (late submission),5 (code did not match with code in report),7.50,10,,14_5
 2252822,VŨ ĐỨC,TOÀN,10,6.5 (missing exercise 4; late submission;  exercies 5 not clear),6 (missing testcases for exe1; no calling function for exe2),7.50,10,,14_5
-2252833,LÊ THANH BẢO,TRÂN,9 (submit wrong files extension; no asm),9 (submit wrong files extension; no asm),10,9.50,10,,02_4
-2252881,NGUYỄN LÊ VÂN,TÚ,9.5 (no seperation files lab2.1_a and lab 2.1_b....),9 (submit wrong files extension; no asm; testcase for exe5 not clear),10,9.50,10,,07_5
 2252879,DƯƠNG THANH,TÚ,9 (no seperation amongs exercises e.i. lab1_a lab1_b),10 ,10,9.50,10,,14_5
-2252930,PHAN THẢO,VY,10,10,10,10.00,10,,04_5
+2252224,VÕ DUY,HIỆU,7,7,9,7.50,10,,15_5
+2152626,Bùi Trần Minh,Khang,10,0 (no submission),0 (plagiarism:codeA),3.50,10,,15_5
+2252345,ĐỖ TRƯỜNG,KHOA,8,8,9,8.50,10,,15_5
+2252064,LÊ NGUYÊN,BẢO,0 (no rreport found),0 (no rreport found),3,1.00,0,no assignment found,
+2252540,ĐỖ HOÀNG BÌNH,NGUYÊN,0 (no submission),0 (no submission),0 (no report-no testcases),0.00,0,no assignment found,
