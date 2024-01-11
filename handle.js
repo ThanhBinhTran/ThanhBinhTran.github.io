@@ -1,6 +1,6 @@
 var file_path = "2023_HK222/";
 var img_logo = "Figures/logo_hcmut.png"
-var instruction = "Select semester then input student ID. Current semeter is 'HK II 2022-2023'"
+var instruction = "Select semester then input student ID. Current semeter is 'Year of 2023-2024 HK II'"
 window.onload = function() {
   document.getElementById("instruction").innerHTML = instruction;
 };
