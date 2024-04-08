@@ -1,5 +1,6 @@
 var file_path = "2023_HK222/";
 var img_logo = "Figures/logo_hcmut.png"
+var copy_right = "&copy2022 Thanh-Binh Tran. All rights reserved."
 var instruction = "Select semester then input student ID. Current semeter is 'Year of 2023-2024 HK II'"
 window.onload = function() {
   document.getElementById("instruction").innerHTML = instruction;
